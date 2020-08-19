@@ -85,7 +85,7 @@ body .sticky {
   position: fixed;
   top: 0;
   width: 82.8vw;
-  margin-left: 8.6vw;
+  margin-left: 8vw;
 }
 
 body #about {
@@ -110,9 +110,11 @@ body #about p {
 body #about,
 body #portfolio,
 body #blog,
-body #contact {
+body #contact,
+body .main-container {
   padding-top: 10vw;
-  margin: 0vw 8.6vw;
+  width: 82.8vw;
+  margin: auto;
 }
 
 body #about,
@@ -201,6 +203,75 @@ body #contact #contact-right {
   margin: auto;
 }
 
+body #contact #contact-right form input,
+body #contact #contact-right form textarea {
+  width: 350px;
+}
+
+body .blog-content,
+body .comment-card {
+  margin-left: 4.2vw;
+}
+
+body .created-at {
+  font-size: 16px;
+  color: #E46D16;
+}
+
+body .main-container {
+  padding-bottom: 10vw;
+}
+
+body .main-container div form {
+  margin: auto 4.2vw;
+}
+
+body .main-container div form input,
+body .main-container div form textarea {
+  width: 100%;
+}
+
+body .main-container div form textarea {
+  height: 50vw;
+}
+
+body .comments form {
+  margin: auto 8.6vw;
+}
+
+body .comments form input,
+body .comments form textarea {
+  width: 100%;
+}
+
+body #delete {
+  display: none;
+  position: absolute;
+  width: 50vw;
+  border: 1px solid black;
+  padding: 5vw;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #ffffff;
+}
+
+body #delete p {
+  margin: 2vw 0;
+}
+
+body #delete #actions {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 5vw auto 0 auto;
+}
+
+body #delete #actions button {
+  margin: 0 2vw;
+}
+
 body footer {
   background: #333333;
   display: -webkit-box;
@@ -265,12 +336,20 @@ h2 {
   color: #333333;
 }
 
+h2 a {
+  color: #333333;
+}
+
 h1 {
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
   line-height: 50px;
+  color: #333333;
+}
+
+h1 a {
   color: #333333;
 }
 
@@ -282,10 +361,9 @@ p {
 
 form input,
 form textarea {
-  width: 350px;
   height: 45px;
   background: #CFCFCF;
-  border-radius: 10px;
+  border-radius: 5px;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 300;
@@ -449,6 +527,16 @@ form button a {
     -ms-grid-row: 2;
         grid-row-start: 2;
     margin: auto;
+  }
+  body .main-container h1 {
+    font-size: 32px;
+  }
+  body .main-container h2 a {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  body .main-container div form textarea {
+    height: 1500px;
   }
   body footer {
     font-size: 12px;

@@ -2,6 +2,7 @@ $gray:#333333;
 $orange:#E46D16;
 $white: #ffffff;
 $black: #000000;
+$page_width: 82.8vw;
 *,
 *::before,
 *::after {
@@ -12,6 +13,8 @@ $black: #000000;
 body {
     margin: 0;
     width: 98.9vw;
+    // background-color: rgba(255, 255, 255, 0.25);
+    // opacity: 0.5;
     #home {
         width: 98.9vw;
         height: 100vh;
@@ -24,8 +27,6 @@ body {
         color: #ffffff;
         margin-left: 8.6vw;
         padding-top: 12.5vw;
-        left: 5vw;
-        top: 40vh;
         width: 82.8vw;
         p {
             line-height: 7.5vw;
@@ -42,7 +43,7 @@ body {
     }
     nav {
         border: 2px solid $orange;
-        width: 82.8vw;
+        width: $page_width;
         margin: auto;
         height: 60px;
         overflow: hidden;
@@ -78,12 +79,12 @@ body {
         position: fixed;
         top: 0;
         width: 82.8vw;
-        margin-left: 8.6vw;
+        margin-left: 8vw;
     }
     #about {
-        display: flex;
-        align-items: center;
-        margin: 5vw 10vw;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin: auto 10vw;
         img {
             width: 500px;
             height: 335.57px;
@@ -92,15 +93,16 @@ body {
         p {
             font-size: 20px;
             line-height: 40px;
-            margin-left: 5vw;
         }
     }
     #about,
     #portfolio,
     #blog,
-    #contact {
+    #contact,
+    .main-container {
         padding-top: 10vw;
-        margin: 0vw 8.6vw;
+        width: $page_width;
+        margin: auto;
     }
     #about,
     #blog,
@@ -112,7 +114,8 @@ body {
         .outer-box {
             border: 1px solid $black;
             .highlight-cards {
-                display: flex;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
                 margin-left: 4.2vw;
             }
             .highlight-card {
@@ -161,37 +164,95 @@ body {
         }
         #contact-right {
             margin: auto;
+            form {
+                input,
+                textarea {
+                    width: 350px;
+                }
+            }
         }
     }
-}
-
-footer {
-    background: #333333;
-    display: flex;
-    align-items: center;
-    font-family: Nunito;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    color: $white;
-    height: 5vw;
-    div {
-        padding: 0 5vw;
+    .blog-content,
+    .comment-card {
+        margin-left: 4.2vw;
     }
-    .social {
-        margin-left: 50vw;
+    .created-at {
+        font-size: 16px;
+        color: $orange;
     }
-    ul {
-        margin: 0;
-        padding: 0;
+    .main-container {
+        padding-bottom: 10vw;
+        div {
+            form {
+                margin: auto 4.2vw;
+                input,
+                textarea {
+                    width: 100%
+                }
+                textarea {
+                    height: 50vw;
+                }
+            }
+        }
     }
-    li {
-        list-style: none;
-        float: left;
-        a {
-            text-decoration: none;
-            color: $white;
-            padding: 0 10px;
+    .comments {
+        form {
+            margin: auto 8.6vw;
+            input,
+            textarea {
+                width: 100%
+            }
+        }
+    }
+    #delete {
+        display: none;
+        position: absolute;
+        width: 50vw;
+        border: 1px solid black;
+        padding: 5vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $white;
+        p {
+            margin: 2vw 0;
+        }
+        #actions {
+            width: fit-content;
+            margin: 5vw auto 0 auto;
+            button {
+                margin: 0 2vw
+            }
+        }
+    }
+    footer {
+        background: #333333;
+        display: flex;
+        align-items: center;
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: $white;
+        height: 5vw;
+        div {
+            padding: 0 5vw;
+        }
+        .social {
+            margin-left: 50vw;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            float: left;
+            a {
+                text-decoration: none;
+                color: $white;
+                padding: 0 10px;
+            }
         }
     }
 }
@@ -217,6 +278,9 @@ h2 {
     font-size: 28px;
     line-height: 16px;
     color: $gray;
+    a {
+        color: $gray;
+    }
 }
 
 h1 {
@@ -226,6 +290,9 @@ h1 {
     font-size: 36px;
     line-height: 50px;
     color: $gray;
+    a {
+        color: $gray;
+    }
 }
 
 p {
@@ -237,10 +304,9 @@ p {
 form {
     input,
     textarea {
-        width: 350px;
         height: 45px;
         background: #CFCFCF;
-        border-radius: 10px;
+        border-radius: 5px;
         font-family: Open Sans;
         font-style: normal;
         font-weight: 300;
@@ -259,6 +325,209 @@ form {
         margin: auto;
         a {
             text-decoration: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        #home {
+            height: 100vh !important;
+        }
+        #welcome-message {
+            font-size: 6vw !important;
+            padding-top: 35vw !important;
+            p {
+                line-height: 10vw !important;
+                span {
+                    font-size: 9vw !important;
+                    display: block !important;
+                }
+            }
+        }
+        nav {
+            width: 100vw;
+            overflow: hidden;
+            ul {
+                margin: 5vw 0 !important;
+                padding: 0 !important;
+                .nav-link {
+                    li {
+                        margin: auto !important;
+                        a {
+                            font-weight: 900;
+                            font-size: 4.5vw !important;
+                            display: block;
+                            padding: 1vw !important;
+                        }
+                    }
+                }
+                .active {
+                    color: $orange !important;
+                    text-decoration: underline !important;
+                }
+            }
+        }
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100vw !important;
+            margin-left: 0 !important;
+        }
+        #about {
+            display: grid;
+            grid-template-rows: 50% 50% !important;
+            // align-items: center;
+            margin: 5vw 10vw;
+            img {
+                width: 82.6vw;
+                margin: auto;
+                height: 180px;
+                border-radius: 10px;
+            }
+            p {
+                grid-row-start: 2;
+                width: 82.8vw;
+                font-size: 12px;
+                line-height: 25px;
+            }
+        }
+        #portfolio,
+        #blog {
+            .outer-box {
+                border: 1px solid $black;
+                height: inherit;
+                .highlight-cards {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    margin-left: 4.2vw;
+                    height: inherit;
+                }
+                .highlight-card {
+                    margin: 2vw 0;
+                    margin-right: 3vw;
+                    width: 33vw;
+                    height: 20vw;
+                    .img-box {
+                        width: 100%;
+                        height: 20vw;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .description {
+                        line-height: 10px;
+                        font-size: 10px;
+                    }
+                    .other-details {
+                        font-size: 10px;
+                    }
+                }
+                .mobile-hide {
+                    display: none;
+                }
+                button {
+                    margin: 50vw 4.2vw 5vw;
+                }
+            }
+        }
+        #contact {
+            display: grid;
+            grid-template-rows: 50% 50%;
+            #contact-left {
+                text-align: center;
+                width: 82.6vw;
+                grid-row-start: 1;
+                margin: auto;
+                h2 {
+                    font-size: 24px;
+                }
+                a {
+                    padding: 8px;
+                    img {
+                        width: 40px;
+                        height: 30px;
+                    }
+                }
+            }
+            #contact-right {
+                grid-row-start: 2;
+                margin: auto;
+            }
+        }
+        .main-container {
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                a {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+            div {
+                form {
+                    textarea {
+                        height: 1500px;
+                    }
+                }
+            }
+        }
+        footer {
+            font-size: 12px;
+            height: 15vw;
+            div {
+                padding: 0 5vw;
+            }
+            .social {
+                margin-left: auto;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                a {
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+    button {
+        border-radius: 5px;
+        padding: 8px 20px;
+        a {
+            font-size: 20px;
+        }
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 50px;
+    }
+    form {
+        input,
+        textarea {
+            width: 82.6vw;
+            height: 40px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin: 2.5vw auto;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            display: block;
+            margin: auto;
+            a {
+                text-decoration: none;
+            }
         }
     }
 }
