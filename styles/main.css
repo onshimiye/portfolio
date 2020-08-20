@@ -248,6 +248,58 @@ body .main-container .admin form button {
   margin-top: 2vw;
 }
 
+body .main-container .dashboard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  row-gap: 5vw;
+  -webkit-column-gap: 5vw;
+          column-gap: 5vw;
+  margin: auto 4.2vw;
+}
+
+body .main-container .dashboard .dashboard-card {
+  border: 1px solid #000000;
+  background-color: #E5E5E5;
+  height: 100%;
+  padding: 2.5vw;
+}
+
+body .main-container .dashboard .dashboard-card .stats,
+body .main-container .dashboard .dashboard-card .actions {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20vw auto;
+      grid-template-columns: 20vw auto;
+}
+
+body .main-container .dashboard .dashboard-card .actions a {
+  font-size: 1.5vw;
+}
+
+body .main-container .dashboard .dashboard-card a {
+  color: #000000;
+}
+
+body .main-container .dashboard .small {
+  width: 35vw;
+}
+
+body .main-container .dashboard .large {
+  width: 75vw;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+body .main-container .dashboard .large span {
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+}
+
 body .comments form {
   margin: auto 8.6vw;
 }
@@ -566,6 +618,41 @@ form button a {
   }
   body .main-container .admin form button {
     margin-top: 5vw;
+  }
+  body .main-container .dashboard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 10vw 0;
+  }
+  body .main-container .dashboard .dashboard-card {
+    padding: 5vw;
+    width: 100%;
+  }
+  body .main-container .dashboard .dashboard-card .stats,
+  body .main-container .dashboard .dashboard-card .actions {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    font-size: 4vw;
+  }
+  body .main-container .dashboard .dashboard-card .actions a {
+    font-size: 5vw;
+  }
+  body .main-container .dashboard .dashboard-card a {
+    color: #000000;
+    font-size: 4vw;
+  }
+  body .main-container .dashboard .large .stats {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
   }
   body footer {
     font-size: 12px;
