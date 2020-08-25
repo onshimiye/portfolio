@@ -8,72 +8,78 @@
 
 body {
     margin: 0;
-    width: 98.9vw;
 }
 
 body #home {
-    width: 98.9vw;
+    width: 100%;
     height: 100vh;
-    background: -webkit-gradient(linear, left top, right top, from(#333333), color-stop(97.68%, rgba(196, 196, 196, 0)));
-    background: linear-gradient(90deg, #333333 0%, rgba(196, 196, 196, 0) 97.68%);
+    background: -webkit-gradient(linear, left top, right top, from(#333333), color-stop(97.68%, #8C8C8C));
+    background: linear-gradient(90deg, #333333 0%, #8C8C8C 97.68%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
 }
 
-body #welcome-message {
+body #home #welcome-message {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 2vw 0;
+}
+
+body #home #welcome-message p {
     font-style: normal;
     font-weight: bold;
-    font-size: 3vw;
+    font-size: 2em;
     color: #ffffff;
-    margin-left: 8.6vw;
-    padding-top: 12.5vw;
-    width: 82.8vw;
+    line-height: 3em;
 }
 
-body #welcome-message p {
-    line-height: 7.5vw;
+body #home #welcome-message p span {
+    font-size: 1.5em;
 }
 
-body #welcome-message p span {
-    font-size: 4vw;
-}
-
-body #welcome-message p #name {
+body #home #welcome-message p #name {
     color: #E46D16;
 }
 
-body #welcome-message p #title {
+body #home #welcome-message p #title {
     color: #333333;
 }
 
 body nav {
     border: 2px solid #E46D16;
-    width: 82.8vw;
+    width: 80vw;
     margin: auto;
-    height: 60px;
+    height: auto;
     overflow: hidden;
     background-color: #ffffff;
 }
 
 body nav ul {
-    margin: 7px 0;
+    width: auto;
+    margin: 0 auto;
 }
 
-body nav ul .nav-link li {
+body nav ul li {
     display: inline;
     list-style: none;
     float: left;
-    margin: auto 50px;
+    margin: 0 4vw;
 }
 
-body nav ul .nav-link li a {
-    font-family: 'Raleway', sans-serif;
+body nav ul li a {
+    font-family: 'Nunito';
     text-transform: uppercase;
     text-decoration: none;
     color: #000000;
     font-style: normal;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 1.5vw;
     display: block;
-    padding: 10px;
+    padding: 10px 0.5vw;
 }
 
 body nav ul .active {
@@ -84,27 +90,31 @@ body nav ul .active {
 body .sticky {
     position: fixed;
     top: 0;
-    width: 82.8vw;
-    margin-left: 8vw;
+    width: 80vw;
+    margin-left: 9.5%;
 }
 
 body #about {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 50% 50%;
-    grid-template-columns: 50% 50%;
-    margin: auto 10vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 body #about img {
-    width: 500px;
-    height: 335.57px;
+    width: 40%;
+    height: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
     border-radius: 10px;
+    margin: 0 5%;
 }
 
 body #about p {
-    font-size: 20px;
-    line-height: 40px;
+    font-size: 1em;
+    line-height: 2em;
 }
 
 body #about,
@@ -113,14 +123,8 @@ body #blog,
 body #contact,
 body .main-container {
     padding-top: 10vw;
-    width: 82.8vw;
+    width: 80vw;
     margin: auto;
-}
-
-body #about,
-body #blog,
-body #contact {
-    height: 100vh;
 }
 
 body #portfolio .outer-box,
@@ -132,51 +136,53 @@ body #portfolio .outer-box .highlight-cards,
 body #blog .outer-box .highlight-cards {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto auto auto auto;
-    grid-template-columns: auto auto auto auto;
-    margin-left: 4.2vw;
+    -ms-grid-columns: auto auto auto;
+    grid-template-columns: auto auto auto;
 }
 
 body #portfolio .outer-box .highlight-card,
 body #blog .outer-box .highlight-card {
-    margin: 2vw 0;
-    margin-right: 3vw;
-    width: 16.5vw;
-    height: 20vw;
-}
-
-body #portfolio .outer-box .highlight-card .img-box,
-body #blog .outer-box .highlight-card .img-box {
-    width: 16.5vw;
-    height: 11vw;
+    margin: 5% auto;
+    width: 85%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    border: 1px solid black;
 }
 
 body #portfolio .outer-box .highlight-card .img-box img,
 body #blog .outer-box .highlight-card .img-box img {
     width: 100%;
-    height: 100%;
+    height: auto;
     -o-object-fit: cover;
     object-fit: cover;
 }
 
+body #portfolio .outer-box .highlight-card p,
+body #blog .outer-box .highlight-card p {
+    font-size: 1em;
+    font-weight: 500;
+    text-align: justify;
+}
+
 body #portfolio .outer-box .highlight-card .description,
 body #blog .outer-box .highlight-card .description {
-    font-weight: 500;
     color: #000000;
-    line-height: 20px;
-    font-size: 14px;
-    letter-spacing: 0px;
 }
 
 body #portfolio .outer-box .highlight-card .other-details,
 body #blog .outer-box .highlight-card .other-details {
-    font-size: 16px;
     color: #E46D16;
+}
+
+body #portfolio .outer-box .highlight-card:nth-child(4),
+body #blog .outer-box .highlight-card:nth-child(4) {
+    display: none;
 }
 
 body #portfolio .outer-box button,
 body #blog .outer-box button {
-    margin: 5vw 4.2vw 2vw;
+    margin: 2vw;
 }
 
 body #contact {
@@ -188,24 +194,25 @@ body #contact {
 
 body #contact #contact-left {
     margin: auto;
+    text-align: center;
 }
 
 body #contact #contact-left a {
-    padding: 8px;
+    padding: 1em;
 }
 
 body #contact #contact-left a img {
-    width: 40px;
-    height: 30px;
+    width: 2.5em;
+    height: auto;
 }
 
 body #contact #contact-right {
-    margin: auto;
+    margin: 5vw auto;
 }
 
 body #contact #contact-right form input,
 body #contact #contact-right form textarea {
-    width: 350px;
+    width: 100%;
 }
 
 body .blog-content,
@@ -453,145 +460,25 @@ form button a {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 600px) {
-    body #home {
-        height: 100vh !important;
+@media only screen and (max-width: 400px) {
+    body #home #welcome-message {
+        font-size: 10px;
     }
-    body #welcome-message {
-        font-size: 6vw !important;
-        padding-top: 35vw !important;
-    }
-    body #welcome-message p {
-        line-height: 10vw !important;
-    }
-    body #welcome-message p span {
-        font-size: 9vw !important;
+    body #home #welcome-message p span {
         display: block !important;
     }
-    body nav {
-        width: 100vw;
-        overflow: hidden;
-    }
-    body nav ul {
-        margin: 5vw 0 !important;
-        padding: 0 !important;
-    }
-    body nav ul .nav-link li {
-        margin: auto !important;
-    }
-    body nav ul .nav-link li a {
-        font-weight: 900;
-        font-size: 4.5vw !important;
-        display: block;
-        padding: 1vw !important;
-    }
-    body nav ul .active {
-        color: #E46D16 !important;
-        text-decoration: underline !important;
-    }
-    body .sticky {
-        position: fixed;
-        top: 0;
-        width: 100vw !important;
-        margin-left: 0 !important;
-    }
     body #about {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-rows: 50% 50% !important;
-        grid-template-rows: 50% 50% !important;
-        margin: 5vw 10vw;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
     body #about img {
-        width: 82.6vw;
-        margin: auto;
-        height: 180px;
-        border-radius: 10px;
+        margin: 5vw;
     }
     body #about p {
-        -ms-grid-row: 2;
-        grid-row-start: 2;
-        width: 82.8vw;
-        font-size: 12px;
-        line-height: 25px;
-    }
-    body #portfolio .outer-box,
-    body #blog .outer-box {
-        border: 1px solid #000000;
-        height: inherit;
-    }
-    body #portfolio .outer-box .highlight-cards,
-    body #blog .outer-box .highlight-cards {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
-        margin-left: 4.2vw;
-        height: inherit;
-    }
-    body #portfolio .outer-box .highlight-card,
-    body #blog .outer-box .highlight-card {
-        margin: 2vw 0;
-        margin-right: 3vw;
-        width: 33vw;
-        height: 20vw;
-    }
-    body #portfolio .outer-box .highlight-card .img-box,
-    body #blog .outer-box .highlight-card .img-box {
-        width: 100%;
-        height: 20vw;
-    }
-    body #portfolio .outer-box .highlight-card .img-box img,
-    body #blog .outer-box .highlight-card .img-box img {
-        width: 100%;
-        height: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
-    }
-    body #portfolio .outer-box .highlight-card .description,
-    body #blog .outer-box .highlight-card .description {
-        line-height: 10px;
-        font-size: 10px;
-    }
-    body #portfolio .outer-box .highlight-card .other-details,
-    body #blog .outer-box .highlight-card .other-details {
-        font-size: 10px;
-    }
-    body #portfolio .outer-box .mobile-hide,
-    body #blog .outer-box .mobile-hide {
-        display: none;
-    }
-    body #portfolio .outer-box button,
-    body #blog .outer-box button {
-        margin: 50vw 4.2vw 5vw;
-    }
-    body #contact {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-rows: 50% 50%;
-        grid-template-rows: 50% 50%;
-    }
-    body #contact #contact-left {
-        text-align: center;
-        width: 82.6vw;
-        -ms-grid-row: 1;
-        grid-row-start: 1;
-        margin: auto;
-    }
-    body #contact #contact-left h2 {
-        font-size: 24px;
-    }
-    body #contact #contact-left a {
-        padding: 8px;
-    }
-    body #contact #contact-left a img {
-        width: 40px;
-        height: 30px;
-    }
-    body #contact #contact-right {
-        -ms-grid-row: 2;
-        grid-row-start: 2;
-        margin: auto;
+        font-size: 0.8em !important;
+        line-height: 2em;
     }
     body .main-container h1 {
         font-size: 32px;
@@ -705,3 +592,562 @@ form button a {
         text-decoration: none;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    body #home #welcome-message p {
+        font-size: 20px !important;
+    }
+    body #home #welcome-message p span {
+        display: block !important;
+    }
+    body nav {
+        width: 100%;
+    }
+    body nav ul {
+        padding: 0;
+    }
+    body nav ul li {
+        margin: 0 2vw !important;
+    }
+    body nav ul li a {
+        font-size: 3.5vw !important;
+        padding: 10px 1vw !important;
+    }
+    body .sticky {
+        width: 100%;
+        margin: 0 !important;
+    }
+    body #about {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    body #about img {
+        width: 80% !important;
+        margin: 5vw;
+    }
+    body #about p {
+        font-size: 0.8em;
+        line-height: 2em;
+    }
+    body #portfolio .outer-box .highlight-cards,
+    body #blog .outer-box .highlight-cards {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto !important;
+        grid-template-columns: auto !important;
+    }
+    body #portfolio .outer-box .highlight-card p,
+    body #blog .outer-box .highlight-card p {
+        font-size: 1.2em;
+        font-weight: 500;
+        text-align: justify;
+    }
+    body #portfolio .outer-box .highlight-card:nth-child(3),
+    body #portfolio .outer-box .highlight-card:nth-child(4),
+    body #blog .outer-box .highlight-card:nth-child(3),
+    body #blog .outer-box .highlight-card:nth-child(4) {
+        display: none;
+    }
+    body #portfolio .outer-box button,
+    body #blog .outer-box button {
+        margin: 5vw !important;
+    }
+    body .main-container h1 {
+        font-size: 32px;
+    }
+    body .main-container h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container h2 a {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container div form textarea {
+        height: 1500px;
+    }
+    body .main-container .admin h2 {
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container .admin form {
+        margin: 5vw auto;
+        width: 75%;
+    }
+    body .main-container .admin form button {
+        margin-top: 5vw;
+    }
+    body .main-container .dashboard {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 10vw 0;
+    }
+    body .main-container .dashboard .dashboard-card {
+        padding: 5vw;
+        width: 100%;
+    }
+    body .main-container .dashboard .dashboard-card .stats,
+    body .main-container .dashboard .dashboard-card .actions {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .dashboard-card .actions a {
+        font-size: 5vw;
+    }
+    body .main-container .dashboard .dashboard-card a {
+        color: #000000;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .large .stats {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    }
+    body footer {
+        font-size: 12px;
+        height: 15vw;
+    }
+    body footer div {
+        padding: 0 5vw;
+    }
+    body footer .social {
+        margin-left: auto;
+    }
+    body footer ul {
+        margin: 0;
+        padding: 0;
+    }
+    body footer li a {
+        padding: 0 5px;
+    }
+    button {
+        border-radius: 5px;
+        padding: 8px 20px;
+    }
+    button a {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 50px;
+    }
+    form input,
+    form textarea {
+        width: 82.6vw;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin: 2.5vw auto;
+    }
+    form textarea {
+        height: 100px;
+    }
+    form button {
+        display: block;
+        margin: auto;
+    }
+    form button a {
+        text-decoration: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    body #home #welcome-message p {
+        font-size: 24px;
+    }
+    body nav ul {
+        width: auto;
+        margin: 0 auto;
+    }
+    body nav ul li {
+        margin: 0 2.5vw;
+    }
+    body nav ul li a {
+        font-size: 1.8vw;
+        padding: 10px 1vw;
+    }
+    body .sticky {
+        margin-left: 10vw;
+    }
+    body #about {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    body #about img {
+        width: 60%;
+        margin: 5vw;
+    }
+    body #about p {
+        font-size: 1em;
+        line-height: 2em;
+    }
+    body #portfolio .outer-box .highlight-cards,
+    body #blog .outer-box .highlight-cards {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    }
+    body #portfolio .outer-box .highlight-card p,
+    body #blog .outer-box .highlight-card p {
+        font-size: 1.2em;
+        font-weight: 500;
+        text-align: justify;
+    }
+    body #portfolio .outer-box .highlight-card:nth-child(3),
+    body #portfolio .outer-box .highlight-card:nth-child(4),
+    body #blog .outer-box .highlight-card:nth-child(3),
+    body #blog .outer-box .highlight-card:nth-child(4) {
+        display: none;
+    }
+    body #portfolio .outer-box button,
+    body #blog .outer-box button {
+        margin: 3vw;
+    }
+    body #contact {
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    body #contact #contact-left {
+        margin: 5vw auto;
+    }
+    body #contact #contact-left a {
+        padding: 0.5em;
+    }
+    body #contact #contact-left a img {
+        width: 40px;
+        height: 30px;
+    }
+    body #contact #contact-right {
+        -ms-grid-row: 2;
+        grid-row-start: 2;
+        margin: 5vw auto;
+    }
+    body #contact #contact-right form {
+        width: 60vw;
+    }
+    body #contact #contact-right form input,
+    body #contact #contact-right form textarea {
+        width: 100% !important;
+    }
+    body .main-container h1 {
+        font-size: 32px;
+    }
+    body .main-container h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container h2 a {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container div form textarea {
+        height: 1500px;
+    }
+    body .main-container .admin h2 {
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container .admin form {
+        margin: 5vw auto;
+        width: 75%;
+    }
+    body .main-container .admin form button {
+        margin-top: 5vw;
+    }
+    body .main-container .dashboard {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 10vw 0;
+    }
+    body .main-container .dashboard .dashboard-card {
+        padding: 5vw;
+        width: 100%;
+    }
+    body .main-container .dashboard .dashboard-card .stats,
+    body .main-container .dashboard .dashboard-card .actions {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .dashboard-card .actions a {
+        font-size: 5vw;
+    }
+    body .main-container .dashboard .dashboard-card a {
+        color: #000000;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .large .stats {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    }
+    body footer {
+        font-size: 12px;
+        height: 15vw;
+    }
+    body footer div {
+        padding: 0 5vw;
+    }
+    body footer .social {
+        margin-left: auto;
+    }
+    body footer ul {
+        margin: 0;
+        padding: 0;
+    }
+    body footer li a {
+        padding: 0 5px;
+    }
+    button {
+        border-radius: 5px;
+        padding: 8px 20px;
+    }
+    button a {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 50px;
+    }
+    form input,
+    form textarea {
+        width: 82.6vw;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin: 2.5vw auto;
+    }
+    form textarea {
+        height: 100px;
+    }
+    form button {
+        display: block;
+        margin: auto;
+    }
+    form button a {
+        text-decoration: none;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    body {
+        width: 60vw !important;
+        margin: 0 auto;
+        border: 1px solid black;
+    }
+    body #home #welcome-message {
+        width: 48vw !important;
+        margin: auto;
+    }
+    body nav {
+        width: 48vw;
+    }
+    body nav ul {
+        width: auto;
+        margin: 0 auto;
+    }
+    body nav ul li {
+        margin: 0 1.5vw;
+    }
+    body nav ul li a {
+        font-size: 1vw;
+        padding: 10px 1vw;
+    }
+    body .sticky {
+        width: 48vw;
+        margin-left: 6vw;
+    }
+    body #about {
+        width: 48vw;
+    }
+    body #about img {
+        margin: 0 2vw;
+    }
+    body #about p {
+        font-size: 1em;
+        line-height: 2em;
+    }
+    body #portfolio,
+    body #blog {
+        width: 48vw;
+    }
+    body #portfolio .outer-box button,
+    body #blog .outer-box button {
+        margin: 1vw;
+    }
+    body #contact {
+        width: 48vw;
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+    }
+    body #contact #contact-left a {
+        padding: 0.5em;
+    }
+    body #contact #contact-left a img {
+        width: 1.5em;
+        height: auto;
+    }
+    body #contact #contact-right {
+        margin: 5vw auto;
+    }
+    body #contact #contact-right form input,
+    body #contact #contact-right form textarea {
+        width: 100%;
+        margin: 5%;
+    }
+    body .main-container h1 {
+        font-size: 32px;
+    }
+    body .main-container h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container h2 a {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container div form textarea {
+        height: 1500px;
+    }
+    body .main-container .admin h2 {
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container .admin form {
+        margin: 5vw auto;
+        width: 75%;
+    }
+    body .main-container .admin form button {
+        margin-top: 5vw;
+    }
+    body .main-container .dashboard {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 10vw 0;
+    }
+    body .main-container .dashboard .dashboard-card {
+        padding: 5vw;
+        width: 100%;
+    }
+    body .main-container .dashboard .dashboard-card .stats,
+    body .main-container .dashboard .dashboard-card .actions {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .dashboard-card .actions a {
+        font-size: 5vw;
+    }
+    body .main-container .dashboard .dashboard-card a {
+        color: #000000;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .large .stats {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    }
+    body footer {
+        font-size: 12px;
+        height: 2.5vw;
+    }
+    body footer div {
+        padding: 0 5vw;
+    }
+    body footer .social {
+        margin-left: auto;
+    }
+    body footer ul {
+        margin: 0;
+        padding: 0;
+    }
+    body footer li a {
+        padding: 0 5px;
+    }
+    button {
+        border-radius: 5px;
+        padding: 8px 20px;
+    }
+    button a {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 50px;
+    }
+    form input,
+    form textarea {
+        width: 82.6vw;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin: 2.5vw auto;
+    }
+    form textarea {
+        height: 100px;
+    }
+    form button {
+        display: block;
+        margin: auto;
+    }
+    form button a {
+        text-decoration: none;
+    }
+}
+
+
+/*# sourceMappingURL=main.css.map */
