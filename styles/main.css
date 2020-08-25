@@ -354,17 +354,14 @@ body footer {
     font-family: Nunito;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 1.2em;
     color: #ffffff;
     height: 5vw;
 }
 
 body footer div {
-    padding: 0 5vw;
-}
-
-body footer .social {
-    margin-left: 50vw;
+    width: 100%;
+    padding: 0 10%;
 }
 
 body footer ul {
