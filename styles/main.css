@@ -214,18 +214,31 @@ body #contact #contact-right form textarea {
     width: 100%;
 }
 
-body .blog-content,
-body .comment-card {
-    margin-left: 4.2vw;
-}
-
-body .created-at {
-    font-size: 16px;
-    color: #E46D16;
-}
-
 body .main-container {
     padding-bottom: 10vw;
+}
+
+body .main-container .blog-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+body .main-container .blog-header :first-child {
+    width: 100%;
+}
+
+body .main-container .blog-header a {
+    display: inline;
+    padding: 0 1vw;
+    font-size: 0.75em;
 }
 
 body .main-container div form {
@@ -239,6 +252,16 @@ body .main-container div form textarea {
 
 body .main-container div form textarea {
     height: 50vw;
+}
+
+body .main-container .blog-content,
+body .main-container .comment-card {
+    margin-left: 4.2vw;
+}
+
+body .main-container .created-at {
+    font-size: 16px;
+    color: #E46D16;
 }
 
 body .main-container .admin h2 {
@@ -477,18 +500,8 @@ form button a {
         line-height: 2em;
     }
     body .main-container h1 {
-        font-size: 32px;
-    }
-    body .main-container h2 {
-        font-size: 20px;
-        line-height: 30px;
-    }
-    body .main-container h2 a {
-        font-size: 20px;
-        line-height: 30px;
-    }
-    body .main-container div form textarea {
-        height: 1500px;
+        font-size: 1.2em;
+        line-height: 1.2em;
     }
     body .main-container .admin h2 {
         text-align: center;
@@ -651,7 +664,8 @@ form button a {
         margin: 5vw !important;
     }
     body .main-container h1 {
-        font-size: 32px;
+        font-size: 1.5em;
+        line-height: 1.2em;
     }
     body .main-container h2 {
         font-size: 20px;
@@ -853,19 +867,8 @@ form button a {
     body #contact #contact-right form textarea {
         width: 100% !important;
     }
-    body .main-container h1 {
-        font-size: 32px;
-    }
-    body .main-container h2 {
-        font-size: 20px;
-        line-height: 30px;
-    }
-    body .main-container h2 a {
-        font-size: 20px;
-        line-height: 30px;
-    }
     body .main-container div form textarea {
-        height: 1500px;
+        height: 1000px;
     }
     body .main-container .admin h2 {
         text-align: center;
@@ -993,9 +996,6 @@ form button a {
         width: 48vw;
         margin-left: 6vw;
     }
-    body #about {
-        width: 48vw;
-    }
     body #about img {
         margin: 0 2vw;
     }
@@ -1003,8 +1003,11 @@ form button a {
         font-size: 1em;
         line-height: 2em;
     }
+    body #about,
     body #portfolio,
-    body #blog {
+    body #blog,
+    body #contact,
+    body .main-container {
         width: 48vw;
     }
     body #portfolio .outer-box button,
@@ -1012,7 +1015,6 @@ form button a {
         margin: 1vw;
     }
     body #contact {
-        width: 48vw;
         height: -webkit-max-content;
         height: -moz-max-content;
         height: max-content;
@@ -1044,7 +1046,7 @@ form button a {
         line-height: 30px;
     }
     body .main-container div form textarea {
-        height: 1500px;
+        height: 1000px;
     }
     body .main-container .admin h2 {
         text-align: center;
@@ -1131,7 +1133,7 @@ form button a {
         height: 40px;
         border-radius: 5px;
         font-size: 14px;
-        margin: 2.5vw auto;
+        margin: 0.5vw auto;
     }
     form textarea {
         height: 100px;
