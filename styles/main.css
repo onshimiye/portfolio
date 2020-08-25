@@ -26,7 +26,7 @@ body #home {
 body #home #welcome-message {
     width: 80vw;
     margin: 0 auto;
-    padding: 2vw 0;
+    padding: 5vw 0;
 }
 
 body #home #welcome-message p {
@@ -147,7 +147,6 @@ body #blog .outer-box .highlight-card {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
-    border: 1px solid black;
 }
 
 body #portfolio .outer-box .highlight-card .img-box img,
@@ -769,7 +768,7 @@ form button a {
 
 @media only screen and (max-width: 900px) {
     body #home #welcome-message p {
-        font-size: 24px;
+        font-size: 32px;
     }
     body nav ul {
         width: auto;
@@ -974,11 +973,10 @@ form button a {
     body {
         width: 60vw !important;
         margin: 0 auto;
-        border: 1px solid black;
     }
     body #home #welcome-message {
         width: 48vw !important;
-        margin: auto;
+        margin: 0 auto;
     }
     body nav {
         width: 48vw;
