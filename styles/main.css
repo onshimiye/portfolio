@@ -79,7 +79,7 @@ body nav ul li a {
     font-weight: 900;
     font-size: 1.5vw;
     display: block;
-    padding: 10px 0.5vw;
+    padding: 1.5vw 0.5vw;
 }
 
 body nav ul .active {
@@ -601,6 +601,7 @@ form button a {
         display: block !important;
     }
     body nav {
+        margin-left: 0 !important;
         width: 100%;
     }
     body nav ul {
@@ -611,11 +612,10 @@ form button a {
     }
     body nav ul li a {
         font-size: 3.5vw !important;
-        padding: 10px 1vw !important;
+        padding: 5vw 1vw !important;
     }
     body .sticky {
         width: 100%;
-        margin: 0 !important;
     }
     body #about {
         -webkit-box-orient: vertical;
@@ -780,10 +780,11 @@ form button a {
     }
     body nav ul li a {
         font-size: 1.8vw;
-        padding: 10px 1vw;
+        padding: 2vw 1vw;
     }
     body .sticky {
         margin-left: 10vw;
+        margin-top: 2vw;
     }
     body #about {
         -webkit-box-orient: vertical;
