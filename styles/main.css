@@ -1,0 +1,1149 @@
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+body #home {
+    width: 100%;
+    height: 100vh;
+    background: -webkit-gradient(linear, left top, right top, from(#333333), color-stop(97.68%, #8C8C8C));
+    background: linear-gradient(90deg, #333333 0%, #8C8C8C 97.68%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+body #home #welcome-message {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 5vw 0;
+}
+
+body #home #welcome-message p {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2em;
+    color: #ffffff;
+    line-height: 3em;
+}
+
+body #home #welcome-message p span {
+    font-size: 1.5em;
+}
+
+body #home #welcome-message p #name {
+    color: #E46D16;
+}
+
+body #home #welcome-message p #title {
+    color: #333333;
+}
+
+body nav {
+    border: 2px solid #E46D16;
+    width: 80vw;
+    margin: auto;
+    height: auto;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+body nav ul {
+    width: auto;
+    margin: 0 auto;
+}
+
+body nav ul li {
+    display: inline;
+    list-style: none;
+    float: left;
+    margin: 0 4vw;
+}
+
+body nav ul li a {
+    font-family: 'Nunito';
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.5vw;
+    display: block;
+    padding: 1.5vw 0.5vw;
+}
+
+body nav ul .active {
+    color: #E46D16 !important;
+    text-decoration: underline !important;
+}
+
+body .sticky {
+    position: fixed;
+    top: 0;
+    width: 80vw;
+    margin-left: 9.5%;
+}
+
+body #about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+body #about img {
+    width: 40%;
+    height: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 5%;
+}
+
+body #about p {
+    font-size: 1em;
+    line-height: 2em;
+}
+
+body #about,
+body #portfolio,
+body #blog,
+body #contact,
+body .main-container {
+    padding-top: 10vw;
+    width: 80vw;
+    margin: auto;
+}
+
+body #portfolio .outer-box,
+body #blog .outer-box {
+    border: 1px solid #000000;
+}
+
+body #portfolio .outer-box .highlight-cards,
+body #blog .outer-box .highlight-cards {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+    grid-template-columns: auto auto auto;
+}
+
+body #portfolio .outer-box .highlight-card,
+body #blog .outer-box .highlight-card {
+    margin: 5% auto;
+    width: 85%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+}
+
+body #portfolio .outer-box .highlight-card .img-box img,
+body #blog .outer-box .highlight-card .img-box img {
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+body #portfolio .outer-box .highlight-card p,
+body #blog .outer-box .highlight-card p {
+    font-size: 1em;
+    font-weight: 500;
+    text-align: justify;
+}
+
+body #portfolio .outer-box .highlight-card .description,
+body #blog .outer-box .highlight-card .description {
+    color: #000000;
+}
+
+body #portfolio .outer-box .highlight-card .other-details,
+body #blog .outer-box .highlight-card .other-details {
+    color: #E46D16;
+}
+
+body #portfolio .outer-box .highlight-card:nth-child(4),
+body #blog .outer-box .highlight-card:nth-child(4) {
+    display: none;
+}
+
+body #portfolio .outer-box button,
+body #blog .outer-box button {
+    margin: 2vw;
+}
+
+body #contact {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+    grid-template-columns: 50% 50%;
+}
+
+body #contact #contact-left {
+    margin: auto;
+    text-align: center;
+}
+
+body #contact #contact-left a {
+    padding: 1em;
+}
+
+body #contact #contact-left a img {
+    width: 2.5em;
+    height: auto;
+}
+
+body #contact #contact-right {
+    margin: 5vw auto;
+}
+
+body #contact #contact-right form input,
+body #contact #contact-right form textarea {
+    width: 100%;
+}
+
+body .blog-content,
+body .comment-card {
+    margin-left: 4.2vw;
+}
+
+body .created-at {
+    font-size: 16px;
+    color: #E46D16;
+}
+
+body .main-container {
+    padding-bottom: 10vw;
+}
+
+body .main-container div form {
+    margin: auto 4.2vw;
+}
+
+body .main-container div form input,
+body .main-container div form textarea {
+    width: 100%;
+}
+
+body .main-container div form textarea {
+    height: 50vw;
+}
+
+body .main-container .admin h2 {
+    text-align: center;
+}
+
+body .main-container .admin form {
+    margin: 4vw auto;
+    width: 35%;
+}
+
+body .main-container .admin form button {
+    margin-top: 2vw;
+}
+
+body .main-container .dashboard {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
+    -ms-grid-columns: auto auto;
+    grid-template-columns: auto auto;
+    row-gap: 5vw;
+    -webkit-column-gap: 5vw;
+    column-gap: 5vw;
+    margin: auto 4.2vw;
+}
+
+body .main-container .dashboard .dashboard-card {
+    border: 1px solid #000000;
+    background-color: #E5E5E5;
+    height: 100%;
+    padding: 2.5vw;
+}
+
+body .main-container .dashboard .dashboard-card .stats,
+body .main-container .dashboard .dashboard-card .actions {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 20vw auto;
+    grid-template-columns: 20vw auto;
+}
+
+body .main-container .dashboard .dashboard-card .actions a {
+    font-size: 1.5vw;
+}
+
+body .main-container .dashboard .dashboard-card a {
+    color: #000000;
+}
+
+body .main-container .dashboard .small {
+    width: 35vw;
+}
+
+body .main-container .dashboard .large {
+    width: 75vw;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+body .main-container .dashboard .large span {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+}
+
+body .comments form {
+    margin: auto 8.6vw;
+}
+
+body .comments form input,
+body .comments form textarea {
+    width: 100%;
+}
+
+body #delete {
+    display: none;
+    position: absolute;
+    width: 50vw;
+    border: 1px solid black;
+    padding: 5vw;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+}
+
+body #delete p {
+    margin: 2vw 0;
+}
+
+body #delete #actions {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 5vw auto 0 auto;
+}
+
+body #delete #actions button {
+    margin: 0 2vw;
+}
+
+body footer {
+    background: #333333;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2em;
+    color: #ffffff;
+    height: 5vw;
+}
+
+body footer div {
+    width: 100%;
+    padding: 0 10%;
+}
+
+body footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+body footer li {
+    list-style: none;
+    float: left;
+}
+
+body footer li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0 10px;
+}
+
+button {
+    background: #333333;
+    border-radius: 10px;
+    padding: 12px 35px;
+    height: inherit;
+    border: none;
+}
+
+button a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+h2 {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 16px;
+    color: #333333;
+}
+
+h2 a {
+    color: #333333;
+}
+
+h1 {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 50px;
+    color: #333333;
+}
+
+h1 a {
+    color: #333333;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    text-align: justify;
+}
+
+form input,
+form textarea {
+    height: 45px;
+    background: #CFCFCF;
+    border-radius: 5px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 33px;
+    color: #000000;
+    padding-left: 10px;
+    border: none;
+    margin: 1vw;
+}
+
+form textarea {
+    height: 100px;
+}
+
+form button {
+    display: block;
+    margin: auto;
+}
+
+form button a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 400px) {
+    body #home #welcome-message {
+        font-size: 10px;
+    }
+    body #home #welcome-message p span {
+        display: block !important;
+    }
+    body #about {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    body #about img {
+        margin: 5vw;
+    }
+    body #about p {
+        font-size: 0.8em !important;
+        line-height: 2em;
+    }
+    body .main-container h1 {
+        font-size: 32px;
+    }
+    body .main-container h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container h2 a {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container div form textarea {
+        height: 1500px;
+    }
+    body .main-container .admin h2 {
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container .admin form {
+        margin: 5vw auto;
+        width: 75%;
+    }
+    body .main-container .admin form button {
+        margin-top: 5vw;
+    }
+    body .main-container .dashboard {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 10vw 0;
+    }
+    body .main-container .dashboard .dashboard-card {
+        padding: 5vw;
+        width: 100%;
+    }
+    body .main-container .dashboard .dashboard-card .stats,
+    body .main-container .dashboard .dashboard-card .actions {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .dashboard-card .actions a {
+        font-size: 5vw;
+    }
+    body .main-container .dashboard .dashboard-card a {
+        color: #000000;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .large .stats {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    }
+    body footer {
+        font-size: 12px;
+        height: 15vw;
+    }
+    body footer div {
+        padding: 0 5vw;
+    }
+    body footer .social {
+        margin-left: auto;
+    }
+    body footer ul {
+        margin: 0;
+        padding: 0;
+    }
+    body footer li a {
+        padding: 0 5px;
+    }
+    button {
+        border-radius: 5px;
+        padding: 8px 20px;
+    }
+    button a {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 50px;
+    }
+    form input,
+    form textarea {
+        width: 82.6vw;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin: 2.5vw auto;
+    }
+    form textarea {
+        height: 100px;
+    }
+    form button {
+        display: block;
+        margin: auto;
+    }
+    form button a {
+        text-decoration: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body #home #welcome-message p {
+        font-size: 20px !important;
+    }
+    body #home #welcome-message p span {
+        display: block !important;
+    }
+    body nav {
+        margin-left: 0 !important;
+        width: 100%;
+    }
+    body nav ul {
+        padding: 0;
+    }
+    body nav ul li {
+        margin: 0 2vw !important;
+    }
+    body nav ul li a {
+        font-size: 3.5vw !important;
+        padding: 5vw 1vw !important;
+    }
+    body .sticky {
+        width: 100%;
+    }
+    body #about {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    body #about img {
+        width: 80% !important;
+        margin: 5vw;
+    }
+    body #about p {
+        font-size: 0.8em;
+        line-height: 2em;
+    }
+    body #portfolio .outer-box .highlight-cards,
+    body #blog .outer-box .highlight-cards {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto !important;
+        grid-template-columns: auto !important;
+    }
+    body #portfolio .outer-box .highlight-card p,
+    body #blog .outer-box .highlight-card p {
+        font-size: 1.2em;
+        font-weight: 500;
+        text-align: justify;
+    }
+    body #portfolio .outer-box .highlight-card:nth-child(3),
+    body #portfolio .outer-box .highlight-card:nth-child(4),
+    body #blog .outer-box .highlight-card:nth-child(3),
+    body #blog .outer-box .highlight-card:nth-child(4) {
+        display: none;
+    }
+    body #portfolio .outer-box button,
+    body #blog .outer-box button {
+        margin: 5vw !important;
+    }
+    body .main-container h1 {
+        font-size: 32px;
+    }
+    body .main-container h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container h2 a {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container div form textarea {
+        height: 1500px;
+    }
+    body .main-container .admin h2 {
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container .admin form {
+        margin: 5vw auto;
+        width: 75%;
+    }
+    body .main-container .admin form button {
+        margin-top: 5vw;
+    }
+    body .main-container .dashboard {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 10vw 0;
+    }
+    body .main-container .dashboard .dashboard-card {
+        padding: 5vw;
+        width: 100%;
+    }
+    body .main-container .dashboard .dashboard-card .stats,
+    body .main-container .dashboard .dashboard-card .actions {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .dashboard-card .actions a {
+        font-size: 5vw;
+    }
+    body .main-container .dashboard .dashboard-card a {
+        color: #000000;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .large .stats {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    }
+    body footer {
+        font-size: 12px;
+        height: 15vw;
+    }
+    body footer div {
+        padding: 0 5vw;
+    }
+    body footer .social {
+        margin-left: auto;
+    }
+    body footer ul {
+        margin: 0;
+        padding: 0;
+    }
+    body footer li a {
+        padding: 0 5px;
+    }
+    button {
+        border-radius: 5px;
+        padding: 8px 20px;
+    }
+    button a {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 50px;
+    }
+    form input,
+    form textarea {
+        width: 82.6vw;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin: 2.5vw auto;
+    }
+    form textarea {
+        height: 100px;
+    }
+    form button {
+        display: block;
+        margin: auto;
+    }
+    form button a {
+        text-decoration: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    body #home #welcome-message p {
+        font-size: 32px;
+    }
+    body nav ul {
+        width: auto;
+        margin: 0 auto;
+    }
+    body nav ul li {
+        margin: 0 2.5vw;
+    }
+    body nav ul li a {
+        font-size: 1.8vw;
+        padding: 2vw 1vw;
+    }
+    body .sticky {
+        margin-left: 10vw;
+        margin-top: 2vw;
+    }
+    body #about {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    body #about img {
+        width: 60%;
+        margin: 5vw;
+    }
+    body #about p {
+        font-size: 1em;
+        line-height: 2em;
+    }
+    body #portfolio .outer-box .highlight-cards,
+    body #blog .outer-box .highlight-cards {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    }
+    body #portfolio .outer-box .highlight-card p,
+    body #blog .outer-box .highlight-card p {
+        font-size: 1.2em;
+        font-weight: 500;
+        text-align: justify;
+    }
+    body #portfolio .outer-box .highlight-card:nth-child(3),
+    body #portfolio .outer-box .highlight-card:nth-child(4),
+    body #blog .outer-box .highlight-card:nth-child(3),
+    body #blog .outer-box .highlight-card:nth-child(4) {
+        display: none;
+    }
+    body #portfolio .outer-box button,
+    body #blog .outer-box button {
+        margin: 3vw;
+    }
+    body #contact {
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    body #contact #contact-left {
+        margin: 5vw auto;
+    }
+    body #contact #contact-left a {
+        padding: 0.5em;
+    }
+    body #contact #contact-left a img {
+        width: 40px;
+        height: 30px;
+    }
+    body #contact #contact-right {
+        -ms-grid-row: 2;
+        grid-row-start: 2;
+        margin: 5vw auto;
+    }
+    body #contact #contact-right form {
+        width: 60vw;
+    }
+    body #contact #contact-right form input,
+    body #contact #contact-right form textarea {
+        width: 100% !important;
+    }
+    body .main-container h1 {
+        font-size: 32px;
+    }
+    body .main-container h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container h2 a {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container div form textarea {
+        height: 1500px;
+    }
+    body .main-container .admin h2 {
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container .admin form {
+        margin: 5vw auto;
+        width: 75%;
+    }
+    body .main-container .admin form button {
+        margin-top: 5vw;
+    }
+    body .main-container .dashboard {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 10vw 0;
+    }
+    body .main-container .dashboard .dashboard-card {
+        padding: 5vw;
+        width: 100%;
+    }
+    body .main-container .dashboard .dashboard-card .stats,
+    body .main-container .dashboard .dashboard-card .actions {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .dashboard-card .actions a {
+        font-size: 5vw;
+    }
+    body .main-container .dashboard .dashboard-card a {
+        color: #000000;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .large .stats {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    }
+    body footer {
+        font-size: 12px;
+        height: 15vw;
+    }
+    body footer div {
+        padding: 0 5vw;
+    }
+    body footer .social {
+        margin-left: auto;
+    }
+    body footer ul {
+        margin: 0;
+        padding: 0;
+    }
+    body footer li a {
+        padding: 0 5px;
+    }
+    button {
+        border-radius: 5px;
+        padding: 8px 20px;
+    }
+    button a {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 50px;
+    }
+    form input,
+    form textarea {
+        width: 82.6vw;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin: 2.5vw auto;
+    }
+    form textarea {
+        height: 100px;
+    }
+    form button {
+        display: block;
+        margin: auto;
+    }
+    form button a {
+        text-decoration: none;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    body {
+        width: 60vw !important;
+        margin: 0 auto;
+    }
+    body #home #welcome-message {
+        width: 48vw !important;
+        margin: 0 auto;
+    }
+    body nav {
+        width: 48vw;
+    }
+    body nav ul {
+        width: auto;
+        margin: 0 auto;
+    }
+    body nav ul li {
+        margin: 0 1.5vw;
+    }
+    body nav ul li a {
+        font-size: 1vw;
+        padding: 10px 1vw;
+    }
+    body .sticky {
+        width: 48vw;
+        margin-left: 6vw;
+    }
+    body #about {
+        width: 48vw;
+    }
+    body #about img {
+        margin: 0 2vw;
+    }
+    body #about p {
+        font-size: 1em;
+        line-height: 2em;
+    }
+    body #portfolio,
+    body #blog {
+        width: 48vw;
+    }
+    body #portfolio .outer-box button,
+    body #blog .outer-box button {
+        margin: 1vw;
+    }
+    body #contact {
+        width: 48vw;
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+    }
+    body #contact #contact-left a {
+        padding: 0.5em;
+    }
+    body #contact #contact-left a img {
+        width: 1.5em;
+        height: auto;
+    }
+    body #contact #contact-right {
+        margin: 5vw auto;
+    }
+    body #contact #contact-right form input,
+    body #contact #contact-right form textarea {
+        width: 100%;
+        margin: 5%;
+    }
+    body .main-container h1 {
+        font-size: 32px;
+    }
+    body .main-container h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container h2 a {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container div form textarea {
+        height: 1500px;
+    }
+    body .main-container .admin h2 {
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container .admin form {
+        margin: 5vw auto;
+        width: 75%;
+    }
+    body .main-container .admin form button {
+        margin-top: 5vw;
+    }
+    body .main-container .dashboard {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 10vw 0;
+    }
+    body .main-container .dashboard .dashboard-card {
+        padding: 5vw;
+        width: 100%;
+    }
+    body .main-container .dashboard .dashboard-card .stats,
+    body .main-container .dashboard .dashboard-card .actions {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .dashboard-card .actions a {
+        font-size: 5vw;
+    }
+    body .main-container .dashboard .dashboard-card a {
+        color: #000000;
+        font-size: 4vw;
+    }
+    body .main-container .dashboard .large .stats {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    }
+    body footer {
+        font-size: 12px;
+        height: 2.5vw;
+    }
+    body footer div {
+        padding: 0 5vw;
+    }
+    body footer .social {
+        margin-left: auto;
+    }
+    body footer ul {
+        margin: 0;
+        padding: 0;
+    }
+    body footer li a {
+        padding: 0 5px;
+    }
+    button {
+        border-radius: 5px;
+        padding: 8px 20px;
+    }
+    button a {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 50px;
+    }
+    form input,
+    form textarea {
+        width: 82.6vw;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin: 2.5vw auto;
+    }
+    form textarea {
+        height: 100px;
+    }
+    form button {
+        display: block;
+        margin: auto;
+    }
+    form button a {
+        text-decoration: none;
+    }
+}
+
+
+/*# sourceMappingURL=main.css.map */
