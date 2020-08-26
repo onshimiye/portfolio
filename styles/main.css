@@ -339,12 +339,12 @@ body .comments form textarea {
     width: 100%;
 }
 
-body #delete {
+body .delete-popup {
     display: none;
-    position: absolute;
-    width: 50vw;
+    position: fixed;
+    width: 40%;
     border: 1px solid black;
-    padding: 5vw;
+    padding: 2%;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -352,19 +352,23 @@ body #delete {
     background-color: #ffffff;
 }
 
-body #delete p {
+body .delete-popup p {
     margin: 2vw 0;
 }
 
-body #delete #actions {
+body .delete-popup #actions {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    margin: 5vw auto 0 auto;
+    margin: 1vw auto 0 auto;
 }
 
-body #delete #actions button {
-    margin: 0 2vw;
+body .delete-popup #actions button {
+    margin: 0 1vw;
+}
+
+body .delete-popup #actions button a {
+    font-size: 1em;
 }
 
 body footer {
@@ -694,6 +698,13 @@ form button a {
     body .main-container .dashboard .dashboard-card a {
         color: #000000;
     }
+    body .delete-popup {
+        width: 75% !important;
+    }
+    body .delete-popup p {
+        margin: 8vw 2vw !important;
+        font-size: 0.8em;
+    }
     body footer {
         font-size: 12px;
         height: 15vw;
@@ -877,6 +888,13 @@ form button a {
     body .main-container .dashboard .dashboard-card a {
         color: #000000;
     }
+    body .delete-popup {
+        width: 50%;
+    }
+    body .delete-popup p {
+        margin: 5vw 0;
+        font-size: 0.8em;
+    }
     body footer {
         font-size: 12px;
         height: 15vw;
@@ -1008,6 +1026,18 @@ form button a {
     body .main-container div form textarea {
         height: 1000px;
     }
+    body .main-container .admin h2 {
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    body .main-container .admin form {
+        margin: 5vw auto;
+        width: 75%;
+    }
+    body .main-container .admin form button {
+        margin-top: 5vw;
+    }
     body .main-container .dashboard {
         width: 100%;
         display: -ms-grid;
@@ -1052,6 +1082,13 @@ form button a {
     body .main-container .dashboard .large span {
         font-family: 'Open Sans', sans-serif;
         font-style: italic;
+    }
+    body .delete-popup {
+        width: 25%;
+    }
+    body .delete-popup p {
+        margin: 1vw 0;
+        font-size: 0.8em;
     }
     body footer {
         font-size: 12px;

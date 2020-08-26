@@ -38,3 +38,24 @@ window.addEventListener("scroll", event => {
         }
     });
 });
+
+function deletePopup() {
+    document.getElementsByClassName('delete-popup')[0].style.display = 'block';
+    var sections = document.getElementsByTagName('section');
+
+    var i;
+    for (i = 0; i < sections.length; i++) {
+        sections[i].style.opacity = '0.2';
+    }
+
+}
+
+function deleteCancel() {
+    document.getElementsByClassName('delete-popup')[0].style.display = 'none';
+    var sections = document.getElementsByTagName('section');
+
+    var i;
+    for (i = 0; i < sections.length; i++) {
+        sections[i].style.opacity = '1';
+    }
+}
