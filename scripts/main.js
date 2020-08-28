@@ -132,3 +132,24 @@ function deleteCancel() {
         sections[i].style.opacity = '1';
     }
 }
+
+function addNewPopup() {
+    document.getElementsByClassName('add-new-popup')[0].style.display = 'block';
+    var sections = document.getElementsByTagName('section');
+
+    var i;
+    for (i = 0; i < sections.length; i++) {
+        sections[i].style.opacity = '0.2';
+    }
+
+}
+
+function addNewCancel() {
+    document.getElementsByClassName('add-new-popup')[0].style.display = 'none';
+    var sections = document.getElementsByTagName('section');
+
+    var i;
+    for (i = 0; i < sections.length; i++) {
+        sections[i].style.opacity = '1';
+    }
+}
