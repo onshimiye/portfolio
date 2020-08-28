@@ -561,7 +561,7 @@ h2 {
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 500;
-    font-size: 28px;
+    font-size: 2em;
     line-height: 16px;
     color: #333333;
 }
@@ -693,7 +693,7 @@ form button a {
         font-size: 20px;
     }
     h2 {
-        font-size: 16px;
+        font-size: 1em !important;
         line-height: 16px;
     }
     h1 {
@@ -851,7 +851,7 @@ form button a {
         font-size: 20px;
     }
     h2 {
-        font-size: 16px;
+        font-size: 1em !important;
         line-height: 16px;
     }
     h1 {
@@ -1233,7 +1233,7 @@ form button a {
     }
     body .main-container .admin form {
         margin: 5vw auto;
-        width: 75%;
+        width: 25%;
     }
     body .main-container .admin form button {
         margin-top: 5vw;
