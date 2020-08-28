@@ -58,6 +58,11 @@ body nav {
     background-color: #ffffff;
 }
 
+body nav .burger-menu,
+body nav .burger-close {
+    display: none;
+}
+
 body nav ul {
     width: auto;
     margin: 0 auto;
@@ -385,6 +390,10 @@ body footer {
     font-size: 1.2em;
     color: #ffffff;
     height: 5vw;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
 }
 
 body footer div {
@@ -591,20 +600,6 @@ form button a {
     body #home #welcome-message p span {
         display: block !important;
     }
-    body nav {
-        margin-left: 0 !important;
-        width: 100%;
-    }
-    body nav ul {
-        padding: 0;
-    }
-    body nav ul li {
-        margin: 0 2vw !important;
-    }
-    body nav ul li a {
-        font-size: 3.5vw !important;
-        padding: 5vw 1vw !important;
-    }
     body .sticky {
         width: 100%;
     }
@@ -754,6 +749,43 @@ form button a {
     }
     form button a {
         text-decoration: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body nav {
+        overflow: hidden;
+        background-color: #ffffff;
+        padding: 5vw;
+    }
+    body nav .burger-menu {
+        display: block;
+    }
+    body nav ul {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: none;
+    }
+    body nav ul li {
+        margin: 0 !important;
+        width: 100%;
+    }
+    body nav ul li a {
+        margin: auto !important;
+        padding: 10vw 0 !important;
+        width: max-content;
+        font-size: 1.2em !important;
+    }
+    body nav ul .active {
+        color: #E46D16 !important;
+        text-decoration: underline !important;
+    }
+    body .sticky {
+        position: fixed;
+        top: 0;
+        width: 80vw;
+        margin-left: 9.5%;
     }
 }
 
@@ -1141,6 +1173,3 @@ form button a {
         text-decoration: none;
     }
 }
-
-
-/*# sourceMappingURL=main.css.map */
