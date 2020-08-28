@@ -132,6 +132,87 @@ body #about p {
     line-height: 2em;
 }
 
+body #about .about-image {
+    width: 40%;
+}
+
+body #about .about-image img {
+    width: 100%;
+    margin: 1vw;
+}
+
+body #about form {
+    width: 58%;
+}
+
+body #about form textarea {
+    width: 100%;
+    height: 20vw;
+}
+
+body #portfolio {
+    margin: 5vw auto;
+}
+
+body #portfolio .highlight-card form {
+    padding: 0;
+}
+
+body #portfolio .highlight-card form input,
+body #portfolio .highlight-card form textarea {
+    width: 100%;
+    margin: 0.5vw 0;
+    height: 2vw;
+    font-size: inherit;
+}
+
+body #portfolio .highlight-card form textarea {
+    height: 10vw;
+}
+
+body #portfolio .highlight-card form .actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+body #portfolio .highlight-card form .actions h2 {
+    width: 100%;
+}
+
+body #portfolio .highlight-card form .actions :nth-child(2) {
+    text-align: right;
+}
+
+body #portfolio .highlight-card form .actions a {
+    font-size: 0.75em;
+}
+
+body button {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+}
+
+body button a {
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+body #about .about-image {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
 body #about,
 body #portfolio,
 body #blog,
@@ -140,6 +221,10 @@ body .main-container {
     padding-top: 10vw;
     width: 80vw;
     margin: auto;
+}
+
+body #portfolio {
+    margin-bottom: 5vw;
 }
 
 body #portfolio .outer-box,
@@ -354,10 +439,10 @@ body .comments form textarea {
     width: 100%;
 }
 
-body .delete-popup {
+body .delete-popup,
+.add-new-popup {
     display: none;
     position: fixed;
-    width: 40%;
     border: 1px solid black;
     padding: 2%;
     top: 50%;
@@ -367,23 +452,49 @@ body .delete-popup {
     background-color: #ffffff;
 }
 
-body .delete-popup p {
+body .delete-popup {
+    width: 40%;
+}
+
+body .add-new-popup {
+    width: 70%;
+}
+
+body .delete-popup,
+.add-new-popup p {
     margin: 2vw 0;
 }
 
-body .delete-popup #actions {
+body .delete-popup,
+.add-new-popup #actions {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     margin: 1vw auto 0 auto;
 }
 
-body .delete-popup #actions button {
+body .delete-popup,
+.add-new-popup #actions button {
     margin: 0 1vw;
 }
 
-body .delete-popup #actions button a {
+body .delete-popup,
+.add-new-popup #actions button a {
     font-size: 1em;
+}
+
+body .add-new-popup h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+body .add-new-popup form {
+    padding: 5vw;
+}
+
+body .add-new-popup form input,
+body .add-new-popup form textarea {
+    width: 100%;
 }
 
 body footer {
@@ -443,7 +554,6 @@ button {
 button a {
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
-    font-size: 24px;
     color: #ffffff;
 }
 
@@ -838,6 +948,38 @@ form button a {
         font-size: 1em;
         line-height: 2em;
     }
+    body #about .about-image {
+        width: 100% !important;
+    }
+    body #about .about-image img {
+        width: 100%;
+        margin: 1vw;
+    }
+    body #about form {
+        width: 100% !important;
+    }
+    body #about form textarea {
+        width: 100%;
+        height: 50vw !important;
+    }
+    body #portfolio {
+        margin-bottom: 5vw;
+        /* margin: 5vw 0; */
+    }
+    body #portfolio .highlight-card form input,
+    body #portfolio .highlight-card form textarea {
+        height: 5vw !important;
+    }
+    body #portfolio .highlight-card form textarea {
+        height: 25vw !important;
+    }
+    body #portfolio .highlight-card form .actions a {
+        font-size: 1em !important;
+    }
+    body button a {
+        font-size: 1em !important;
+        text-decoration: none;
+    }
     body #portfolio .outer-box .highlight-cards,
     body #blog .outer-box .highlight-cards {
         display: -ms-grid;
@@ -943,6 +1085,10 @@ form button a {
         margin: 5vw 0;
         font-size: 0.8em;
     }
+    body .add-new-popup h1 {
+        text-align: center;
+        font-size: 1em !important;
+    }
     body footer {
         font-size: 12px;
     }
@@ -962,9 +1108,6 @@ form button a {
     button {
         border-radius: 5px;
         padding: 8px 20px;
-    }
-    button a {
-        font-size: 20px;
     }
     h2 {
         font-size: 16px;
@@ -1027,6 +1170,16 @@ form button a {
     body #about p {
         font-size: 1em;
         line-height: 2em;
+    }
+    body #about .about-image {
+        margin: 1vw;
+    }
+    body #about form {
+        width: 58%;
+    }
+    body #about form textarea {
+        width: 100%;
+        height: 13vw;
     }
     body #about,
     body #portfolio,
@@ -1136,6 +1289,14 @@ form button a {
     body .delete-popup p {
         margin: 1vw 0;
         font-size: 0.8em;
+    }
+    body .add-new-popup {
+        width: 40%;
+        padding: 1vw !important;
+    }
+    body .add-new-popup h1 {
+        text-align: center;
+        font-size: 1.2em;
     }
     body footer div {
         padding: 0 5vw;
