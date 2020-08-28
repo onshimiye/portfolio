@@ -399,17 +399,19 @@ body footer {
     font-weight: normal;
     font-size: 1.2em;
     color: #ffffff;
-    height: 5vw;
-    /* position: fixed;
-    bottom: 0; */
+    height: max-content;
     width: 100%;
     margin: auto;
     flex-shrink: 0;
 }
 
 body footer div {
-    width: 100%;
+    width: max-content;
     padding: 0 10%;
+}
+
+body footer .social {
+    margin-left: auto;
 }
 
 body footer ul {
@@ -420,12 +422,14 @@ body footer ul {
 body footer li {
     list-style: none;
     float: left;
+    height: max-content;
+    padding: 1.5em 10px;
 }
 
 body footer li a {
     text-decoration: none;
     color: #ffffff;
-    padding: 0 10px;
+    padding: 10px;
 }
 
 button {
@@ -553,11 +557,10 @@ form button a {
         color: #000000;
     }
     body footer {
-        font-size: 12px;
-        height: 15vw;
+        font-size: 0.8em !important;
     }
     body footer div {
-        padding: 0 5vw;
+        padding: 0 !important;
     }
     body footer .social {
         margin-left: auto;
@@ -565,6 +568,9 @@ form button a {
     body footer ul {
         margin: 0;
         padding: 0;
+    }
+    body footer li {
+        padding: 0 !important;
     }
     body footer li a {
         padding: 0 5px;
@@ -713,7 +719,6 @@ form button a {
     }
     body footer {
         font-size: 12px;
-        height: 15vw;
     }
     body footer div {
         padding: 0 5vw;
@@ -940,7 +945,6 @@ form button a {
     }
     body footer {
         font-size: 12px;
-        height: 15vw;
     }
     body footer div {
         padding: 0 5vw;
@@ -1133,12 +1137,9 @@ form button a {
         margin: 1vw 0;
         font-size: 0.8em;
     }
-    body footer {
-        font-size: 12px;
-        height: 2.5vw;
-    }
     body footer div {
         padding: 0 5vw;
+        font-size: 0.75vw;
     }
     body footer .social {
         margin-left: auto;
@@ -1147,8 +1148,11 @@ form button a {
         margin: 0;
         padding: 0;
     }
+    body footer li {
+        padding: 0.5vw 0;
+    }
     body footer li a {
-        padding: 0 5px;
+        padding: 0 1vw;
     }
     button {
         border-radius: 5px;
