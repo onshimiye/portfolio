@@ -52,12 +52,7 @@ function burgerMenu() {
 
         let ul = nav.getElementsByTagName('ul')[0];
         ul.setAttribute('style', 'display: flex !important; flex-direction: column !important;');
-
     })
-    window.onscroll(() => {
-        console.log('scrolled');
-        burgerClose()
-    });
 }
 
 function burgerClose() {
