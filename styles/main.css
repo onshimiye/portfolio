@@ -8,12 +8,22 @@
 
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body .content {
+    flex: 1 0 auto;
 }
 
 body #home {
     width: 100%;
-    height: 100vh;
-    background: -webkit-gradient(linear, left top, right top, from(#333333), color-stop(97.68%, #8C8C8C));
+    height: 100vw;
     background: linear-gradient(90deg, #333333 0%, #8C8C8C 97.68%);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -56,6 +66,11 @@ body nav {
     height: auto;
     overflow: hidden;
     background-color: #ffffff;
+}
+
+body nav .burger-menu,
+body nav .burger-close {
+    display: none;
 }
 
 body nav ul {
@@ -117,6 +132,87 @@ body #about p {
     line-height: 2em;
 }
 
+body #about .about-image {
+    width: 40%;
+}
+
+body #about .about-image img {
+    width: 100%;
+    margin: 1vw;
+}
+
+body #about form {
+    width: 58%;
+}
+
+body #about form textarea {
+    width: 100%;
+    height: 20vw;
+}
+
+body #portfolio {
+    margin: 5vw auto;
+}
+
+body #portfolio .highlight-card form {
+    padding: 0;
+}
+
+body #portfolio .highlight-card form input,
+body #portfolio .highlight-card form textarea {
+    width: 100%;
+    margin: 0.5vw 0;
+    height: 2vw;
+    font-size: inherit;
+}
+
+body #portfolio .highlight-card form textarea {
+    height: 10vw;
+}
+
+body #portfolio .highlight-card form .actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+body #portfolio .highlight-card form .actions h2 {
+    width: 100%;
+}
+
+body #portfolio .highlight-card form .actions :nth-child(2) {
+    text-align: right;
+}
+
+body #portfolio .highlight-card form .actions a {
+    font-size: 0.75em;
+}
+
+body button {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+}
+
+body button a {
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+body #about .about-image {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
 body #about,
 body #portfolio,
 body #blog,
@@ -125,6 +221,10 @@ body .main-container {
     padding-top: 10vw;
     width: 80vw;
     margin: auto;
+}
+
+body #portfolio {
+    margin-bottom: 5vw;
 }
 
 body #portfolio .outer-box,
@@ -278,6 +378,7 @@ body .main-container .admin form button {
 }
 
 body .main-container .dashboard {
+    width: 100%;
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: auto auto;
@@ -287,14 +388,14 @@ body .main-container .dashboard {
     row-gap: 5vw;
     -webkit-column-gap: 5vw;
     column-gap: 5vw;
-    margin: auto 4.2vw;
 }
 
 body .main-container .dashboard .dashboard-card {
     border: 1px solid #000000;
     background-color: #E5E5E5;
     height: 100%;
-    padding: 2.5vw;
+    padding: 5%;
+    margin: auto;
 }
 
 body .main-container .dashboard .dashboard-card .stats,
@@ -314,11 +415,11 @@ body .main-container .dashboard .dashboard-card a {
 }
 
 body .main-container .dashboard .small {
-    width: 35vw;
+    width: 90%;
 }
 
 body .main-container .dashboard .large {
-    width: 75vw;
+    width: 95%;
     -ms-grid-column: 1;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -338,10 +439,10 @@ body .comments form textarea {
     width: 100%;
 }
 
-body .delete-popup {
+body .delete-popup,
+.add-new-popup {
     display: none;
     position: fixed;
-    width: 40%;
     border: 1px solid black;
     padding: 2%;
     top: 50%;
@@ -351,23 +452,49 @@ body .delete-popup {
     background-color: #ffffff;
 }
 
-body .delete-popup p {
+body .delete-popup {
+    width: 40%;
+}
+
+body .add-new-popup {
+    width: 70%;
+}
+
+body .delete-popup,
+.add-new-popup p {
     margin: 2vw 0;
 }
 
-body .delete-popup #actions {
+body .delete-popup,
+.add-new-popup #actions {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     margin: 1vw auto 0 auto;
 }
 
-body .delete-popup #actions button {
+body .delete-popup,
+.add-new-popup #actions button {
     margin: 0 1vw;
 }
 
-body .delete-popup #actions button a {
+body .delete-popup,
+.add-new-popup #actions button a {
     font-size: 1em;
+}
+
+body .add-new-popup h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+body .add-new-popup form {
+    padding: 5vw;
+}
+
+body .add-new-popup form input,
+body .add-new-popup form textarea {
+    width: 100%;
 }
 
 body footer {
@@ -383,12 +510,19 @@ body footer {
     font-weight: normal;
     font-size: 1.2em;
     color: #ffffff;
-    height: 5vw;
+    height: max-content;
+    width: 100%;
+    margin: auto;
+    flex-shrink: 0;
 }
 
 body footer div {
-    width: 100%;
+    width: max-content;
     padding: 0 10%;
+}
+
+body footer .social {
+    margin-left: auto;
 }
 
 body footer ul {
@@ -399,12 +533,14 @@ body footer ul {
 body footer li {
     list-style: none;
     float: left;
+    height: max-content;
+    padding: 1.5em 10px;
 }
 
 body footer li a {
     text-decoration: none;
     color: #ffffff;
-    padding: 0 10px;
+    padding: 10px;
 }
 
 button {
@@ -418,7 +554,6 @@ button {
 button a {
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
-    font-size: 24px;
     color: #ffffff;
 }
 
@@ -426,7 +561,7 @@ h2 {
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 500;
-    font-size: 28px;
+    font-size: 2em;
     line-height: 16px;
     color: #333333;
 }
@@ -519,47 +654,23 @@ form button a {
     body .main-container .admin form button {
         margin-top: 5vw;
     }
-    body .main-container .dashboard {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        margin: 10vw 0;
+    body .main-container .dashboard .dashboard-card .stats {
+        display: inline !important;
     }
-    body .main-container .dashboard .dashboard-card {
-        padding: 5vw;
-        width: 100%;
-    }
-    body .main-container .dashboard .dashboard-card .stats,
-    body .main-container .dashboard .dashboard-card .actions {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
-        font-size: 4vw;
+    body .main-container .dashboard .dashboard-card .stats:nth-child(-n + 2) p:nth-child(even) {
+        margin-left: 5%;
     }
     body .main-container .dashboard .dashboard-card .actions a {
-        font-size: 5vw;
+        font-size: 1em !important;
     }
     body .main-container .dashboard .dashboard-card a {
         color: #000000;
-        font-size: 4vw;
-    }
-    body .main-container .dashboard .large .stats {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: auto;
-        grid-template-columns: auto;
     }
     body footer {
-        font-size: 12px;
-        height: 15vw;
+        font-size: 0.8em !important;
     }
     body footer div {
-        padding: 0 5vw;
+        padding: 0 !important;
     }
     body footer .social {
         margin-left: auto;
@@ -567,6 +678,9 @@ form button a {
     body footer ul {
         margin: 0;
         padding: 0;
+    }
+    body footer li {
+        padding: 0 !important;
     }
     body footer li a {
         padding: 0 5px;
@@ -579,7 +693,7 @@ form button a {
         font-size: 20px;
     }
     h2 {
-        font-size: 16px;
+        font-size: 1em !important;
         line-height: 16px;
     }
     h1 {
@@ -612,20 +726,6 @@ form button a {
     }
     body #home #welcome-message p span {
         display: block !important;
-    }
-    body nav {
-        margin-left: 0 !important;
-        width: 100%;
-    }
-    body nav ul {
-        padding: 0;
-    }
-    body nav ul li {
-        margin: 0 2vw !important;
-    }
-    body nav ul li a {
-        font-size: 3.5vw !important;
-        padding: 5vw 1vw !important;
     }
     body .sticky {
         width: 100%;
@@ -702,32 +802,23 @@ form button a {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        margin: 10vw 0;
     }
     body .main-container .dashboard .dashboard-card {
-        padding: 5vw;
-        width: 100%;
+        width: 100% !important;
     }
     body .main-container .dashboard .dashboard-card .stats,
     body .main-container .dashboard .dashboard-card .actions {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
-        font-size: 4vw;
+        -ms-grid-columns: 20vw auto;
+        grid-template-columns: 20vw auto;
+        font-size: 1em;
     }
     body .main-container .dashboard .dashboard-card .actions a {
-        font-size: 5vw;
+        font-size: 1.5vw;
     }
     body .main-container .dashboard .dashboard-card a {
         color: #000000;
-        font-size: 4vw;
-    }
-    body .main-container .dashboard .large .stats {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: auto;
-        grid-template-columns: auto;
     }
     body .delete-popup {
         width: 75% !important;
@@ -738,7 +829,6 @@ form button a {
     }
     body footer {
         font-size: 12px;
-        height: 15vw;
     }
     body footer div {
         padding: 0 5vw;
@@ -761,7 +851,7 @@ form button a {
         font-size: 20px;
     }
     h2 {
-        font-size: 16px;
+        font-size: 1em !important;
         line-height: 16px;
     }
     h1 {
@@ -785,6 +875,43 @@ form button a {
     }
     form button a {
         text-decoration: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body nav {
+        overflow: hidden;
+        background-color: #ffffff;
+        padding: 5vw;
+    }
+    body nav .burger-menu {
+        display: block;
+    }
+    body nav ul {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: none;
+    }
+    body nav ul li {
+        margin: 0 !important;
+        width: 100%;
+    }
+    body nav ul li a {
+        margin: auto !important;
+        padding: 10vw 0 !important;
+        width: max-content;
+        font-size: 1.2em !important;
+    }
+    body nav ul .active {
+        color: #E46D16 !important;
+        text-decoration: underline !important;
+    }
+    body .sticky {
+        position: fixed;
+        top: 0;
+        width: 80vw;
+        margin-left: 9.5%;
     }
 }
 
@@ -820,6 +947,38 @@ form button a {
     body #about p {
         font-size: 1em;
         line-height: 2em;
+    }
+    body #about .about-image {
+        width: 100% !important;
+    }
+    body #about .about-image img {
+        width: 100%;
+        margin: 1vw;
+    }
+    body #about form {
+        width: 100% !important;
+    }
+    body #about form textarea {
+        width: 100%;
+        height: 50vw !important;
+    }
+    body #portfolio {
+        margin-bottom: 5vw;
+        /* margin: 5vw 0; */
+    }
+    body #portfolio .highlight-card form input,
+    body #portfolio .highlight-card form textarea {
+        height: 5vw !important;
+    }
+    body #portfolio .highlight-card form textarea {
+        height: 25vw !important;
+    }
+    body #portfolio .highlight-card form .actions a {
+        font-size: 1em !important;
+    }
+    body button a {
+        font-size: 1em !important;
+        text-decoration: none;
     }
     body #portfolio .outer-box .highlight-cards,
     body #blog .outer-box .highlight-cards {
@@ -901,32 +1060,23 @@ form button a {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        margin: 10vw 0;
     }
     body .main-container .dashboard .dashboard-card {
-        padding: 5vw;
-        width: 100%;
+        width: 80%;
     }
     body .main-container .dashboard .dashboard-card .stats,
     body .main-container .dashboard .dashboard-card .actions {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
-        font-size: 4vw;
+        -ms-grid-columns: 20vw auto;
+        grid-template-columns: 20vw auto;
+        font-size: 0.8em;
     }
     body .main-container .dashboard .dashboard-card .actions a {
-        font-size: 5vw;
+        font-size: 1.5vw;
     }
     body .main-container .dashboard .dashboard-card a {
         color: #000000;
-        font-size: 4vw;
-    }
-    body .main-container .dashboard .large .stats {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: auto;
-        grid-template-columns: auto;
     }
     body .delete-popup {
         width: 50%;
@@ -935,9 +1085,12 @@ form button a {
         margin: 5vw 0;
         font-size: 0.8em;
     }
+    body .add-new-popup h1 {
+        text-align: center;
+        font-size: 1em !important;
+    }
     body footer {
         font-size: 12px;
-        height: 15vw;
     }
     body footer div {
         padding: 0 5vw;
@@ -955,9 +1108,6 @@ form button a {
     button {
         border-radius: 5px;
         padding: 8px 20px;
-    }
-    button a {
-        font-size: 20px;
     }
     h2 {
         font-size: 16px;
@@ -1021,6 +1171,16 @@ form button a {
         font-size: 1em;
         line-height: 2em;
     }
+    body #about .about-image {
+        margin: 1vw;
+    }
+    body #about form {
+        width: 58%;
+    }
+    body #about form textarea {
+        width: 100%;
+        height: 13vw;
+    }
     body #about,
     body #portfolio,
     body #blog,
@@ -1073,45 +1233,55 @@ form button a {
     }
     body .main-container .admin form {
         margin: 5vw auto;
-        width: 75%;
+        width: 25%;
     }
     body .main-container .admin form button {
         margin-top: 5vw;
     }
     body .main-container .dashboard {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        margin: 10vw 0;
+        width: 100%;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+        -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+        row-gap: 1vw;
+        -webkit-column-gap: 1vw;
+        column-gap: 1vw;
     }
     body .main-container .dashboard .dashboard-card {
-        padding: 5vw;
-        width: 100%;
+        border: 1px solid #000000;
+        background-color: #E5E5E5;
+        height: 100%;
+        padding: 5%;
+        margin: auto;
     }
     body .main-container .dashboard .dashboard-card .stats,
     body .main-container .dashboard .dashboard-card .actions {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
-        font-size: 4vw;
+        -ms-grid-columns: 10vw auto;
+        grid-template-columns: 10vw auto;
     }
     body .main-container .dashboard .dashboard-card .actions a {
-        font-size: 5vw;
+        font-size: 1.2em;
     }
     body .main-container .dashboard .dashboard-card a {
         color: #000000;
-        font-size: 4vw;
     }
-    body .main-container .dashboard .large .stats {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: auto;
-        grid-template-columns: auto;
+    body .main-container .dashboard .small {
+        width: 90%;
+    }
+    body .main-container .dashboard .large {
+        width: 95%;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    body .main-container .dashboard .large span {
+        font-family: 'Open Sans', sans-serif;
+        font-style: italic;
     }
     body .delete-popup {
         width: 25%;
@@ -1120,12 +1290,17 @@ form button a {
         margin: 1vw 0;
         font-size: 0.8em;
     }
-    body footer {
-        font-size: 12px;
-        height: 2.5vw;
+    body .add-new-popup {
+        width: 40%;
+        padding: 1vw !important;
+    }
+    body .add-new-popup h1 {
+        text-align: center;
+        font-size: 1.2em;
     }
     body footer div {
         padding: 0 5vw;
+        font-size: 0.75vw;
     }
     body footer .social {
         margin-left: auto;
@@ -1134,8 +1309,11 @@ form button a {
         margin: 0;
         padding: 0;
     }
+    body footer li {
+        padding: 0.5vw 0;
+    }
     body footer li a {
-        padding: 0 5px;
+        padding: 0 1vw;
     }
     button {
         border-radius: 5px;
@@ -1171,6 +1349,3 @@ form button a {
         text-decoration: none;
     }
 }
-
-
-/*# sourceMappingURL=main.css.map */
