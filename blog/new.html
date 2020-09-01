@@ -41,10 +41,10 @@
     <section class="main-container">
         <div>
             <h1>New Article</h1>
-            <form action="">
+            <form action="" id="new-blog-form">
                 <input type="text" name="title" id="title" placeholder="Title"> <br>
                 <textarea name="content" id="content" cols="30" rows="10" placeholder="Body"></textarea> <br>
-                <button><a href="#">Publish</a></button>
+                <button><a href="javascript:void(0)" onclick="createBlog()">Publish</a></button>
 
             </form>
         </div>
@@ -67,7 +67,16 @@
         </div>
 
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+
+    <script src="../scripts/firebase.js"></script>
+    <script src="../scripts/controllers/blog.js"></script>
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/dom.js"></script>
+
 
 
 </body>

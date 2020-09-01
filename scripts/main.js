@@ -112,26 +112,37 @@ window.addEventListener('resize', () => {
     menuReset();
 })
 
-function deletePopup() {
+function deletePopup(id) {
+    // let el = document.getElementById("delete-popup-trigger");
+    // let id = 0;
+    // // let id = el.parentElement.parentElement.parentElement.getAttribute('blog-id');
     document.getElementsByClassName('delete-popup')[0].style.display = 'block';
-    var sections = document.getElementsByTagName('section');
+    let sections = document.getElementsByTagName('section');
 
-    var i;
+    let i;
     for (i = 0; i < sections.length; i++) {
         sections[i].style.opacity = '0.2';
     }
+    console.log(id);
+
+    let deleteButton = document.getElementById('delete-button');
+    deleteButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        remove(id);
+    });
 
 }
 
 function deleteCancel() {
     document.getElementsByClassName('delete-popup')[0].style.display = 'none';
-    var sections = document.getElementsByTagName('section');
+    let sections = document.getElementsByTagName('section');
 
-    var i;
+    let i;
     for (i = 0; i < sections.length; i++) {
         sections[i].style.opacity = '1';
     }
 }
+
 
 function addNewPopup() {
     document.getElementsByClassName('add-new-popup')[0].style.display = 'block';

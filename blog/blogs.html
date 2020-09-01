@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Open+Sans:wght@300;400;700;800&family=Raleway:wght@700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="list()">
     <nav id="navbar">
         <div class="burger-menu">
             <img src="../images/hamburger.svg" alt="">
@@ -47,29 +47,21 @@
             </div>
         </div>
         <div class="blogs-container">
-            <div class="blog-highlight">
-                <h2> <a href="article.html">Random Blog: "The Art of Writing Codes"</a> </h2>
 
-                <p class="created-at"> Mon, Jun 21st 2020</p>
-                <p id="main-highlight">
-                    This is a paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, odio nulla et tempora voluptatem reprehenderit ratione unde vero, quibusdam minus soluta, vitae officia ducimus recusandae mollitia corporis aspernatur dolor assumenda!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, odio nulla et tempora voluptatem reprehenderit ratione unde vero, quibusdam minus soluta, vitae officia ducimus recusandae mollitia corporis aspernatur dolor assumenda!
-                    <span class="readMore"> Read More</span> ...
-                </p>
-            </div>
-
-            <div class="blog-highlight">
-                <h2> <a href="article.html">Random Blog: "The Art of Writing Codes"</a> </h2>
-                <p class="created-at"> Mon, Jun 21st 2020</p>
-                <p id="main-highlight">
-                    This is a paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, odio nulla et tempora voluptatem reprehenderit ratione unde vero, quibusdam minus soluta, vitae officia ducimus recusandae mollitia corporis aspernatur dolor assumenda!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, odio nulla et tempora voluptatem reprehenderit ratione unde vero, quibusdam minus soluta, vitae officia ducimus recusandae mollitia corporis aspernatur dolor assumenda!
-                    <span class="readMore"> Read More</span> ...
-                </p>
-            </div>
         </div>
 
     </section>
+    <div class="delete-popup">
+        <div id="content">
+            <p>Are you sure you want to delete this article? Beware that all the comments associated with this article will also be deleted. </p>
+
+            <div id="actions">
+                <button><a href="javascript:void(0)" onclick=deleteCancel()>Cancel</a></button>
+                <button id="delete-button"><a href="javascript:void(0)" >Delete</a></button>
+
+            </div>
+        </div>
+    </div>
 
     <footer>
 
@@ -86,7 +78,16 @@
         </div>
 
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+
+    <script src="../scripts/firebase.js"></script>
+    <script src="../scripts/controllers/blog.js"></script>
+    <script src="../scripts/controllers/comments.js"></script>
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/dom.js"></script>
 
 
 </body>
