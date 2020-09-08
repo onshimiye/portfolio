@@ -42,26 +42,65 @@ function create(title, file, description, body, author = 'Olivier') {
                 }).catch(error => {
                     console.error("Error adding document: ", error);
                 });
-                // return downlaodURL;
             });
         }
     );
 
 }
 
-function update(id, title, image, description, body) {
-    db.collection('blogs').doc(id).update({
-        title: title,
-        cover_image: image,
-        description: description,
-        body: body,
-        updated_at: Date.now(),
-    }).then(() => {
-        console.log("Document successfully updated!");
-    }).catch(error => {
-        // The document probably doesn't exist.
-        console.error("Error updating document: ", error);
-    });
+function update(id, title, file, description, body) {
+    if (file) {
+        var storageRef = firebase.storage().ref('blog_covers/' + file.name);
+
+        var uploadTask = storageRef.put(file);
+
+        uploadTask.on('state_changed',
+            function progress(snapshot) {
+                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log("upload is " + progress + " done");
+            },
+
+            function error(err) {
+                console.log(error.message);
+            },
+
+            function complete() {
+                uploadTask.snapshot.ref.getDownloadURL().then(function(downlaodURL) {
+                    //get your upload image url here...
+                    console.log(downlaodURL);
+
+                    db.collection('blogs').doc(id).update({
+                        title: title,
+                        cover_image: downlaodURL,
+                        description: description,
+                        body: body,
+                        updated_at: Date.now(),
+                    }).then(() => {
+                        console.log("Document successfully updated!");
+                    }).catch(error => {
+                        // The document probably doesn't exist.
+                        console.error("Error updating document: ", error);
+                    });
+                });
+            }
+        );
+
+
+    } else {
+        db.collection('blogs').doc(id).update({
+            title: title,
+            description: description,
+            body: body,
+            updated_at: Date.now(),
+        }).then(() => {
+            console.log("Document successfully updated!");
+        }).catch(error => {
+            // The document probably doesn't exist.
+            console.error("Error updating document: ", error);
+        });
+
+    }
+
 }
 
 function remove(id) {
@@ -74,12 +113,22 @@ function remove(id) {
     });
 }
 
-function read(id) {
+function read(id, method) {
     var docRef = db.collection("blogs").doc(id);
 
     docRef.get().then(function(doc) {
         if (doc.exists) {
-            renderBlog(doc);
+            switch (method) {
+                case "read":
+                    renderBlog(doc);
+                    break;
+                case "update":
+                    let data = doc.data();
+                    renderBlogForm(false, doc.id, data.title, data.cover_image, data.description, data.body);
+                    break;
+                default:
+                    break;
+            }
             console.log("Document data:", doc.data());
         } else {
             console.log("No such document!");

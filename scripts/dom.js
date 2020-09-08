@@ -1,5 +1,3 @@
-// Firebase integration
-
 function renderBlogs(doc) {
     let data = doc.data();
     let id = doc.id;
@@ -79,17 +77,12 @@ function renderBlog(doc) {
     let title = document.createElement('h1');
     title.textContent = data.title;
 
-    // let headerActions = document.createElement('div');
-    // setAttributes(headerActions, {'class':'header-actions'});
-
     let edit = document.createElement('h2');
     let editLink = document.createElement('a');
     setAttributes(editLink, { 'href': 'javascript:void(0)' });
     editLink.textContent = 'Edit';
     editLink.addEventListener('click', () => {
-
-        // renderBlogForm(false, )
-        window.open(`./blog_form.html?id=${id}&body=${data.body}&title=${data.title}`, '_self');
+        window.open(`./blog_form.html?id=${id}`, '_self');
     })
     edit.appendChild(editLink);
 
@@ -110,8 +103,13 @@ function renderBlog(doc) {
     setAttributes(created_at, { 'class': 'created-at' });
     created_at.textContent = data.created_at;
 
+    let coverImageDiv = document.createElement('div');
+    setAttributes(coverImageDiv, { 'class': 'cover-image' });
+
     let coverImage = document.createElement('img');
     setAttributes(coverImage, { 'src': data.cover_image });
+
+    coverImageDiv.appendChild(coverImage);
 
     let body = document.createElement('div');
     setAttributes(body, { 'class': 'blog-content' });
@@ -119,11 +117,11 @@ function renderBlog(doc) {
     let bodyContent = document.createElement('p');
     bodyContent.textContent = data.body;
 
+    body.appendChild(coverImageDiv);
     body.appendChild(bodyContent);
 
     container.appendChild(blogHeader);
     container.appendChild(created_at);
-    container.appendChild(coverImage);
     container.appendChild(body);
 
 }
@@ -136,46 +134,12 @@ function renderComments() {
 function loadBlogPage() {
     var url = new URL(window.location.href);
 
-    // get access to URLSearchParams object
     var search_params = url.searchParams;
 
     var id = search_params.get('id');
 
-    read(id)
+    read(id, "read");
     console.log(id);
-}
-
-function loadUpdatePage() {
-    var url = new URL(window.location.href);
-
-    // get access to URLSearchParams object
-    var search_params = url.searchParams;
-
-    var id = search_params.get('id');
-    var title = search_params.get('title');
-    var body = search_params.get('body');
-
-    const form = document.querySelector('#edit-blog-form');
-    form.title.value = title
-    form.content.value = body
-
-    let updateButton = document.getElementById('update-button');
-    updateButton.addEventListener('click', () => {
-        update(id, form.title.value, form.content.value)
-    })
-
-    console.log(id);
-
-}
-
-function updateBlog() {
-
-}
-
-function setAttributes(el, attrs) {
-    for (var key in attrs) {
-        el.setAttribute(key, attrs[key]);
-    }
 }
 
 function renderBlogForm(empty, id = null, title = null, image = null, description = null, body = null) {
@@ -236,16 +200,12 @@ function renderBlogForm(empty, id = null, title = null, image = null, descriptio
         header.textContent = 'Edit Article';
         saveButton.textContent = 'Update';
         setAttributes(titleInput, { 'value': title });
-        setAttributes(coverImageInput, { 'value': image });
-        descriptionInput.textContent = description;
-        bodyInput.textContent = body;
+        descriptionInput.defaultValue = description;
+        bodyInput.defaultValue = body;
 
-        // form.title.value = title
-        // form.content.value = body
-
-        // saveButton.addEventListener('click', () => {
-        //     update(id, form.title.value, form.image.value, form.description.value, form.content.value);
-        // });
+        saveButton.addEventListener('click', () => {
+            update(id, form.title.value, file, form.description.value, form.content.value);
+        });
 
     }
 
@@ -254,9 +214,6 @@ function renderBlogForm(empty, id = null, title = null, image = null, descriptio
 
     form.appendChild(titleInput);
     form.appendChild(br);
-
-    // form.appendChild(progressBar);
-    // form.appendChild(br);
 
     form.appendChild(coverImageInput);
     form.appendChild(br);
@@ -272,4 +229,10 @@ function renderBlogForm(empty, id = null, title = null, image = null, descriptio
     container.appendChild(header);
     container.appendChild(form);
 
+}
+
+function setAttributes(el, attrs) {
+    for (var key in attrs) {
+        el.setAttribute(key, attrs[key]);
+    }
 }

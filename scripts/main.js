@@ -113,9 +113,6 @@ window.addEventListener('resize', () => {
 })
 
 function deletePopup(id) {
-    // let el = document.getElementById("delete-popup-trigger");
-    // let id = 0;
-    // // let id = el.parentElement.parentElement.parentElement.getAttribute('blog-id');
     document.getElementsByClassName('delete-popup')[0].style.display = 'block';
     let sections = document.getElementsByTagName('section');
 
@@ -174,41 +171,4 @@ function newBlogFormTrigger() {
     btn.addEventListener('click', () => {
         window.open('./blog_form.html', '_self');
     })
-}
-
-function imageUploader() {
-    let uploader = document.getElementById('upload-progress');
-    let fileButton = document.getElementById('image-uploader');
-
-    let file;
-    fileButton.addEventListener('change', (e) => {
-        file = e.target.files[0];
-    });
-
-
-
-    //     var storageRef = firebase.storage().ref('blog_covers/' + file.name);
-    //     var task = storageRef.put(file);
-    //     task.on('state_changed',
-    //         function progress(snapshot) {
-    //             let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    //             uploader.value = percentage;
-    //             var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    //             console.log("upload is " + progress + " done");
-
-    //         },
-
-    //         function error(err) {
-    //             console.log(error.message);
-    //         },
-
-    //         function complete() {
-    //             uploadTask.snapshot.ref.getDownloadURL().then(function(downlaodURL) {
-    //                 //get your upload image url here...
-    //                 console.log(downlaodURL);
-    //                 return downlaodURL;
-    //             });
-    //         }
-    //     )
-    // });
 }

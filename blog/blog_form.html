@@ -73,7 +73,6 @@
     <script src="../scripts/controllers/comments.js"></script>
     <script src="../scripts/main.js"></script>
     <script src="../scripts/dom.js"></script>
-    <script src="../scripts/controllers/assets.js"></script>
 
     <script>
         var url = new URL(window.location.href);
@@ -84,20 +83,12 @@
         var id = search_params.get('id');
 
         if (id) {
-            var title = search_params.get('title');
-            var image = search_params.get('img');
-            var description = search_params.get('description');
-            var body = search_params.get('body');
-
-            // const form = document.querySelector('#edit-blog-form');
-
-            renderBlogForm(false, id, title, image, description, body);
+            read(id, "update");
 
         } else {
             renderBlogForm(true);
 
         }
-        imageUploader();
     </script>
 
 
