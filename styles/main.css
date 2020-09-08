@@ -335,10 +335,21 @@ body .main-container .blog-header :first-child {
     width: 100%;
 }
 
-body .main-container .blog-header a {
+body .main-container .blog-header h2 a {
     display: inline;
     padding: 0 1vw;
     font-size: 0.75em;
+}
+
+body .main-container .cover-image {
+    width: 100%;
+}
+
+body .main-container .cover-image img {
+    width: 100%;
+    height: 25vw;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 body .main-container div form {
@@ -350,7 +361,7 @@ body .main-container div form textarea {
     width: 100%;
 }
 
-body .main-container div form textarea {
+body .main-container div form #content {
     height: 50vw;
 }
 
@@ -375,6 +386,10 @@ body .main-container .admin form {
 
 body .main-container .admin form button {
     margin-top: 2vw;
+}
+
+body form .actions {
+    display: flex;
 }
 
 body .main-container .dashboard {
@@ -439,10 +454,10 @@ body .comments form textarea {
     width: 100%;
 }
 
-body .delete-popup,
-.add-new-popup {
+body .delete-popup {
     display: none;
     position: fixed;
+    width: 40%;
     border: 1px solid black;
     padding: 2%;
     top: 50%;
@@ -452,34 +467,22 @@ body .delete-popup,
     background-color: #ffffff;
 }
 
-body .delete-popup {
-    width: 40%;
-}
-
-body .add-new-popup {
-    width: 70%;
-}
-
-body .delete-popup,
-.add-new-popup p {
+body .delete-popup p {
     margin: 2vw 0;
 }
 
-body .delete-popup,
-.add-new-popup #actions {
+body .delete-popup #actions {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     margin: 1vw auto 0 auto;
 }
 
-body .delete-popup,
-.add-new-popup #actions button {
+body .delete-popup #actions button {
     margin: 0 1vw;
 }
 
-body .delete-popup,
-.add-new-popup #actions button a {
+body .delete-popup #actions button a {
     font-size: 1em;
 }
 
@@ -549,11 +552,12 @@ button {
     padding: 12px 35px;
     height: inherit;
     border: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: #ffffff;
 }
 
 button a {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
     color: #ffffff;
 }
 
@@ -1222,6 +1226,9 @@ form button a {
     body .main-container h2 a {
         font-size: 20px;
         line-height: 30px;
+    }
+    body .main-container .cover-image img {
+        height: 15vw;
     }
     body .main-container div form textarea {
         height: 1000px;
