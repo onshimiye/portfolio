@@ -44,7 +44,11 @@
             <form action="" id="new-blog-form">
                 <input type="text" name="title" id="title" placeholder="Title"> <br>
                 <textarea name="content" id="content" cols="30" rows="10" placeholder="Body"></textarea> <br>
-                <button><a href="javascript:void(0)" onclick="createBlog()">Publish</a></button>
+                <div class="actions">
+                    <button><a href="javascript:void(0)" onclick=goBack() >Cancel</a></button>
+
+                    <button><a href="javascript:void(0)" onclick="createBlog()">Publish</a></button>
+                </div>
 
             </form>
         </div>

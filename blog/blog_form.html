@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Open+Sans:wght@300;400;700;800&family=Raleway:wght@700&display=swap" rel="stylesheet">
 </head>
 
-<body onload="loadUpdatePage()">
+<body>
     <nav id="navbar">
         <div class="burger-menu">
             <img src="../images/hamburger.svg" alt="">
@@ -39,17 +39,8 @@
     </nav>
 
     <section class="main-container">
-        <div>
-            <h1>Edit Article</h1>
-            <form action="" id="edit-blog-form">
-                <input type="text" name="title" id="title"> <br>
-                <textarea name="content" id="content" cols="30" rows="10"></textarea><br>
-                <div class="actions">
-                    <button><a href="javascript:void(0)" onclick=goBack()() >Cancel</a></button>
+        <div class="blog-form">
 
-                    <button><a href="javascript:void(0)" id="update-button">Update</a></button>
-                </div>
-            </form>
         </div>
 
 
@@ -74,12 +65,40 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
+
 
     <script src="../scripts/firebase.js"></script>
     <script src="../scripts/controllers/blog.js"></script>
     <script src="../scripts/controllers/comments.js"></script>
     <script src="../scripts/main.js"></script>
     <script src="../scripts/dom.js"></script>
+    <script src="../scripts/controllers/assets.js"></script>
+
+    <script>
+        var url = new URL(window.location.href);
+
+        // get access to URLSearchParams object
+        var search_params = url.searchParams;
+
+        var id = search_params.get('id');
+
+        if (id) {
+            var title = search_params.get('title');
+            var image = search_params.get('img');
+            var description = search_params.get('description');
+            var body = search_params.get('body');
+
+            // const form = document.querySelector('#edit-blog-form');
+
+            renderBlogForm(false, id, title, image, description, body);
+
+        } else {
+            renderBlogForm(true);
+
+        }
+        imageUploader();
+    </script>
 
 
 

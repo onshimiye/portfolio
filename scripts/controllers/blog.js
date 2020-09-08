@@ -1,4 +1,4 @@
-async function list() {
+function list() {
     db.collection('blogs').get().then(snapshot => {
         snapshot.docs.forEach(doc => {
             renderBlogs(doc);
@@ -8,25 +8,52 @@ async function list() {
     });
 }
 
-function create(title, body, author = 'Olivier') {
-    db.collection('blogs').add({
-        title: title,
-        body: body,
-        created_at: Date.now(),
-        updated_at: Date.now(),
-        views: 0,
-        author: author,
-    }).then(docRef => {
-        console.log("Document written with ID: ", docRef.id);
-        return docRef.id;
-    }).catch(error => {
-        console.error("Error adding document: ", error);
-    });
+function create(title, file, description, body, author = 'Olivier') {
+    var storageRef = firebase.storage().ref('blog_covers/' + file.name);
+
+    var uploadTask = storageRef.put(file);
+
+    uploadTask.on('state_changed',
+        function progress(snapshot) {
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log("upload is " + progress + " done");
+        },
+
+        function error(err) {
+            console.log(error.message);
+        },
+
+        function complete() {
+            uploadTask.snapshot.ref.getDownloadURL().then(function(downlaodURL) {
+                //get your upload image url here...
+                console.log(downlaodURL);
+                db.collection('blogs').add({
+                    title: title,
+                    cover_image: downlaodURL,
+                    description: description,
+                    body: body,
+                    created_at: Date.now(),
+                    updated_at: Date.now(),
+                    views: 0,
+                    author: author,
+                }).then(docRef => {
+                    console.log("Document written with ID: ", docRef.id);
+                    return docRef.id;
+                }).catch(error => {
+                    console.error("Error adding document: ", error);
+                });
+                // return downlaodURL;
+            });
+        }
+    );
+
 }
 
-function update(id, title, body) {
+function update(id, title, image, description, body) {
     db.collection('blogs').doc(id).update({
         title: title,
+        cover_image: image,
+        description: description,
         body: body,
         updated_at: Date.now(),
     }).then(() => {

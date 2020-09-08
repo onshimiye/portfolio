@@ -350,7 +350,7 @@ body .main-container div form textarea {
     width: 100%;
 }
 
-body .main-container div form textarea {
+body .main-container div form #content {
     height: 50vw;
 }
 
@@ -375,6 +375,10 @@ body .main-container .admin form {
 
 body .main-container .admin form button {
     margin-top: 2vw;
+}
+
+body form .actions {
+    display: flex;
 }
 
 body .main-container .dashboard {
@@ -537,11 +541,12 @@ button {
     padding: 12px 35px;
     height: inherit;
     border: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: #ffffff;
 }
 
 button a {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
     color: #ffffff;
 }
 

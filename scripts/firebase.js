@@ -14,3 +14,4 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 const db = firebase.firestore();
+// var storage = firebase.storage();

@@ -43,7 +43,7 @@ function renderBlogs(doc) {
 
     let body = document.createElement('p');
     setAttributes(body, { 'id': 'main-highlight' });
-    body.textContent = data.body;
+    body.textContent = data.description;
     let readmore = document.createElement('a');
     setAttributes(readmore, { 'href': 'javascript:void(0)', 'class': 'readmore' });
     readmore.textContent = 'Read More...';
@@ -87,7 +87,9 @@ function renderBlog(doc) {
     setAttributes(editLink, { 'href': 'javascript:void(0)' });
     editLink.textContent = 'Edit';
     editLink.addEventListener('click', () => {
-        window.open(`./edit.html?id=${id}&body=${data.body}&title=${data.title}`, '_self');
+
+        // renderBlogForm(false, )
+        window.open(`./blog_form.html?id=${id}&body=${data.body}&title=${data.title}`, '_self');
     })
     edit.appendChild(editLink);
 
@@ -108,6 +110,9 @@ function renderBlog(doc) {
     setAttributes(created_at, { 'class': 'created-at' });
     created_at.textContent = data.created_at;
 
+    let coverImage = document.createElement('img');
+    setAttributes(coverImage, { 'src': data.cover_image });
+
     let body = document.createElement('div');
     setAttributes(body, { 'class': 'blog-content' });
 
@@ -118,6 +123,7 @@ function renderBlog(doc) {
 
     container.appendChild(blogHeader);
     container.appendChild(created_at);
+    container.appendChild(coverImage);
     container.appendChild(body);
 
 }
@@ -170,4 +176,100 @@ function setAttributes(el, attrs) {
     for (var key in attrs) {
         el.setAttribute(key, attrs[key]);
     }
+}
+
+function renderBlogForm(empty, id = null, title = null, image = null, description = null, body = null) {
+
+    let container = document.getElementsByClassName('blog-form')[0];
+
+    let header = document.createElement('h1');
+
+    let form = document.createElement('form');
+
+    let titleInput = document.createElement('input');
+    setAttributes(titleInput, { 'type': 'text', 'name': 'title', 'id': 'title' });
+
+    let progressBar = document.createElement('progress');
+    setAttributes(progressBar, { 'value': '0', 'max': '100', 'id': 'upload-progress' });
+    progressBar.textContent = '0%';
+
+    let coverImageInput = document.createElement('input');
+    setAttributes(coverImageInput, { 'type': 'file', 'name': 'image', 'id': 'image-uploader' });
+    let file;
+    coverImageInput.addEventListener('change', (e) => {
+        file = e.target.files[0];
+    });
+
+
+    let descriptionInput = document.createElement('textarea');
+    setAttributes(descriptionInput, { 'name': 'description', 'id': 'description', 'cols': '20', 'rows': '1' });
+
+    let bodyInput = document.createElement('textarea');
+    setAttributes(bodyInput, { 'name': 'content', 'id': 'content', 'cols': '20', 'rows': '10' });
+
+    let br = document.createElement('br');
+
+    let actions = document.createElement('div');
+    setAttributes(actions, { 'class': 'actions' });
+
+    let cancelButton = document.createElement('button');
+    setAttributes(cancelButton, { 'type': 'button' });
+    cancelButton.textContent = 'Cancel';
+    cancelButton.addEventListener('click', () => {
+        goBack();
+    });
+
+    let saveButton = document.createElement('button');
+    setAttributes(saveButton, { 'type': 'button' });
+
+
+    if (empty === true) {
+        header.textContent = 'New Article';
+        saveButton.textContent = 'Save';
+        saveButton.addEventListener('click', () => {
+            if (file) {
+                create(titleInput.value, file, descriptionInput.value, bodyInput.value);
+            }
+
+        });
+    } else {
+        header.textContent = 'Edit Article';
+        saveButton.textContent = 'Update';
+        setAttributes(titleInput, { 'value': title });
+        setAttributes(coverImageInput, { 'value': image });
+        descriptionInput.textContent = description;
+        bodyInput.textContent = body;
+
+        // form.title.value = title
+        // form.content.value = body
+
+        // saveButton.addEventListener('click', () => {
+        //     update(id, form.title.value, form.image.value, form.description.value, form.content.value);
+        // });
+
+    }
+
+    actions.appendChild(cancelButton);
+    actions.appendChild(saveButton);
+
+    form.appendChild(titleInput);
+    form.appendChild(br);
+
+    // form.appendChild(progressBar);
+    // form.appendChild(br);
+
+    form.appendChild(coverImageInput);
+    form.appendChild(br);
+
+    form.appendChild(descriptionInput);
+    form.appendChild(br);
+
+    form.appendChild(bodyInput);
+    form.appendChild(br);
+
+    form.appendChild(actions);
+
+    container.appendChild(header);
+    container.appendChild(form);
+
 }
